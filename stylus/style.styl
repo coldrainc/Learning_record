@@ -1,0 +1,20 @@
+bgc = red
+border-radius()
+    -webkit-border-radius: arguments
+    -moz-border-radius: arguments
+    border-radius: arguments
+*
+    margin 0
+    padding 0
+
+.box
+    height 100
+    width 100
+    background-color bgc
+    border-radius(2px)
+    .content
+        background-color bgc
+        h1
+            color white
+            &:hover
+                color green
