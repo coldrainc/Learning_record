@@ -1,9 +1,16 @@
-
-html, body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+html,
+body {
+    height: 100%;
 }
-
+.html_content,
+.item-section {
+    height: 100%;
+}
 .item-section {
     min-height: 100%;
     background-color: #ee0a3b;
@@ -11,15 +18,16 @@ html, body {
     font-size: 12px;
 }
 .item-section_header {
-    width: 100%;
+    height: 100%;
     text-align: center;
 }
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
     font-weight: 500;
-}
+} */
 .item-section_header img {
     width: 10rem;
+    /* background: #000; */
 }
 .flag {
     display: table;
