@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script src="socket.io/socket.io.js"></script>
+  <div>This is our socket.html file</div>
+    <script>
+    var socket = io.connect('http://127.0.0.1:8081');//连接服务器(通过io.connect(‘http://localhost’))，然后服务器端io.sockets.on("connection",function(){})就监听到了
+// on 函数用于绑定事件函数，emit 属性用于触发一个事件
+    socket.on('news', function (data) {//  监听收到news的事件后，发送 m 事件
+      console.log(data);
+        socket.emit('m', { my: '客户端data' });//第一个参数是事件，第二个参数是监听m事件的回调函数的参数
+      });
+    </script>
+</body>
+</html>
