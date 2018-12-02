@@ -8,9 +8,6 @@ app.init({
 let result = async function test() {
     let data = await app.callFunction({
         name: "getTopping",
-        data: {
-            
-        }
     })
     console.log(data.result)
     return data.result

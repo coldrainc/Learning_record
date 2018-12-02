@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+		<table class="tablehead table table-striped" id="tablepar">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>缺损构件</th>
+						<th>缺损类型</th>
+						<th>病害描述（具体位置、严重程度）</th>
+						<th>定性描述</th>
+						<th>定量描述</th>
+						<th>评定标度</th>
+						<th>照片编号</th>
+						<th>操作</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody id="tbodyid">
+					<tr class="spotrela">
+						<td class="exceltd" onclick="exceltdcli(this)">
+							<span class="tdsp blo">1</span>
+							<input type="text" id="xh" class="excelinput hid" name="cys"/>
+						</td>
+						<td class="exceltd" onclick="exceltdcli(this)">
+							<span class="tdsp hid"></span>
+							<input type="text"id="qsgj" class="excelinput blo"/>
+						</td>
+						<td class="exceltd" onclick="exceltdcli(this)">
+							<span class="tdsp hid" id="qslxsp"></span>
+							<input type="text" id="qslx1" class="excelinput blo"/>
+						</td>
+						<td class="exceltd" onclick="exceltdcli(this)">
+							<span class="tdsp hid"></span>
+							<input type="text"id="bhlx" class="excelinput blo"/>
+						</td>
+						<td class="exceltd" onclick="exceltdcli(this)">
+							<span class="tdsp hid"></span>
+							<input type="text" id="dxms1" class="excelinput blo"/>
+						</td>
+						<td class="exceltd" onclick="exceltdcli(this)">
+							<span class="tdsp bhidlo"></span>
+							<input type="text" id="dlms1" class="excelinput blo"/>
+						</td>
+						<td class="exceltd" onclick="exceltdcli(this)">
+							<span class="tdsp hid"></span>
+							<input type="number"id="pdbd" class="excelinput blo"/>
+						</td>
+						<td class="imgsctd">
+							<div class="scimg blo">
+								<input type="file" accept="image/*" id="imgsrc1" onchange="changeinp(this)" class="imgsrc rexcel"/>
+								上传照片
+							</div>
+							<span class="zptd hid" onclick="zptdclick(this)">1</span>
+						</td>
+						<td>
+							<span class="spbot spdel" onclick="deltr(this)">－</span>
+						</td>
+						<td>
+							<span class="anniu"  onclick="clianniu(this)">按钮</span>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+</body>
+</html>

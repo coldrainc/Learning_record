@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8" http-equiv="Content-Type" content="text/html;">
+		<title>test</title>
+		<script src="./js/shim.js"></script>
+		<script src="./js/xlsx.full.min.js"></script>
+		<script type="text/javascript" src="./ckeditor5-build-classic-master/build/ckeditor.js" ></script>
+		<script src="./js/jquery.min.js" type="text/javascript"></script>
+		<link href="./ck.css" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="./qiaoliang.css">
+	</head>
+	<body >
+		<div id="bg-image">
+            <img src="./img/beijin.png" alt="bg" />
+        </div>
+		<div class="all">
+			<ul id="suggest"></ul><!-- 提示框 -->
+			<div class="botdis atmid" id="botdisid">
+				<div class="botcli" onclick="toleft()">《</div>
+				<div class="botcline" onclick="toright()">》</div>
+			</div>
+			
+			<div class="left noleftch" id="leftdiv" style="top: 3px">
+				
+				<div id="topid" class="overtop" style="background-color:#d1e1f1">
+					<label>桥名：</label>
+					<input type="text" id="topidqm" autoComplete="off" />
+					<label>时间：</label>
+					<input type="date" id="topidtime" />
+					<input  type="button" onclick="clickhappen(this)" value="查询"/>
+					<input type="button"  onclick="setpage('','',getNowFormatDate(),null,null,'',null,null,null,null)" value="新建"/>
+					<div class="cx">
+						<select id="cxsele">
+							<option onclick="clickquery(this)" value="1">1</option>
+							<option value="1">1</option>
+						</select>			
+					</div>		
+				</div>
+				
+				<div class="head top" style="background-color:#d1e1f1">
+					<div class="tit qm">
+						<label>桥名：</label>
+						<input type="text" id="qm" autoComplete="off"/>
+					</div>
+					<div class="tit lx" >
+						<label>类型：</label>
+						<input type="text" id="lx" onchange="partFunction()"/>
+						<div class="yinchang hidimg" id="lxyc" style="border: none;">
+							<ul class="ul hid" id="lxul">
+							</ul>
+						</div>
+					</div>
+					<div class="tit gj">
+						<label>构件：</label>
+						<input type="text" id="gj"/>
+						<div class="yinchang hidimg" id="gjyc" style="border: none;">
+							<ul class="ul hid" id="gjul">
+
+							</ul>
+						</div>
+
+						<!--<input type="text" id="xiao" style="display: none;margin-left: 10px;"/>-->
+						<!--<div style="display: none;" class="yinchang hidimg" id="xiaoyc">-->
+							<!--<ul class="ul hid" id="xiaoul">-->
+
+							<!--</ul>-->
+						<!--</div>-->
+					</div>
+
+					<div class="tit nf">
+						<label>时间：</label>
+						<input id="sj" type="date" style="width: 120px;"/>
+					</div>
+				</div>
+				<div class="head bottom"  >
+					<div class="tit bw">
+						<label>评价部位：</label>
+						<input type="text" id="bw"/>
+						<div class="yinchang hidimg" id="bwyc" style="border: none">
+							<ul class="ul hid" id="bwul" >
+							</ul>
+						</div>
+					</div>
+					<div class="tit erbw">
+						<label>评价子部件：</label>
+						<select  id="erbw">
+							
+						</select>
+					</div>
+					<div class="tit sl">
+						<label>数量：</label>
+						<input type="number" id="sl"/>
+					</div>
+					<div class="tit tj" id="showadd">
+
+					</div>
+				</div>
+				<div class="head show" id="show">
+				</div>
+				<div class="head bot">
+					<div class="bothead">
+						<div class="tit exct" >
+							<label style="margin-top: 5px;">标题一：</label>
+							<input type="text" id="biao" value="桥梁概况" />
+							<div class="yinchang hidimg" id="byc">
+								<ul class="ul hid" id="bul">
+									<li class="bli">桥梁概况</li>
+									<li class="bli">检测结果汇总</li>
+									<li class="bli">桥梁总体技术状况评定</li>
+									<li class="bli">结论与建议</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="tit erexct" id="erjibiaoti">
+							<label>标题二：</label>
+							<input type="text" id="erbiao" value=""/>
+							<div class="yinchang hidimg" id="erbyc">
+								<ul class="ul hid" id="erbul">
+								</ul>
+							</div>
+						</div>
+						
+						<div onclick="saveall()" class="tit save">
+							<span class="saveexcel" >
+								保存
+							</span>
+						</div>
+						
+						<div class="tit re" id="scwj">
+								<pre>
+									<input type="file" name="xlfile" id="xlf" />
+									</pre>
+									<a id="out"></a>
+									<a id="htmlout"></a>
+							<!--<input type="file" onchange="importf(this)" accept="application/msexcel" id="readexcel" class="rexcel"/>-->
+							<!--导入文件-->
+						</div>
+						<!--<div class="tit re" id="sczp">-->
+							<!--<input type="file" onchange="addimgarr()" accept="image/jpeg" id="readexcel" class="imgsrcbu rexcel"/>-->
+							<!--上传照片-->
+						<!--</div>-->
+					</div>
+					
+					<div class="botbor" >
+						<div class="qlgk blo" id="conarea">
+							<textarea class="qlgktext" onchange="textareach(this)"></textarea>
+						</div>
+						
+						<div class="exceltable hid" id="contable">
+							<span class="spbot spadd" onclick="addtr('','','','','',0)">＋</span>
+							<table class="tablehead table table-striped" id="tablepar">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>缺损构件</th>
+										<th>缺损类型</th>
+										<th>病害描述（具体位置、严重程度）</th>
+										<th>定性描述</th>
+										<th>定量描述</th>
+										<th>评定标度</th>
+										<th>照片编号</th>
+										<th>操作</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody id="tbodyid">
+									<tr class="spotrela">
+										<td class="exceltd" onclick="exceltdcli(this)">
+											<span class="tdsp blo">1</span>
+											<input type="text" id="xh" class="excelinput hid" name="cys"/>
+										</td>
+										<td class="exceltd" onclick="exceltdcli(this)">
+											<span class="tdsp hid"></span>
+											<input type="text"id="qsgj" class="excelinput blo"/>
+										</td>
+										<td class="exceltd" onclick="exceltdcli(this)">
+											<span class="tdsp hid" id="qslxsp"></span>
+											<input type="text" id="qslx1" class="excelinput blo"/>
+										</td>
+										<td class="exceltd" onclick="exceltdcli(this)">
+											<span class="tdsp hid"></span>
+											<input type="text"id="bhlx" class="excelinput blo"/>
+										</td>
+										<td class="exceltd" onclick="exceltdcli(this)">
+											<span class="tdsp hid"></span>
+											<input type="text" id="dxms1" class="excelinput blo"/>
+										</td>
+										<td class="exceltd" onclick="exceltdcli(this)">
+											<span class="tdsp bhidlo"></span>
+											<input type="text" id="dlms1" class="excelinput blo"/>
+										</td>
+										<td class="exceltd" onclick="exceltdcli(this)">
+											<span class="tdsp hid"></span>
+											<input type="number"id="pdbd" class="excelinput blo"/>
+										</td>
+										<td class="imgsctd">
+											<div class="scimg blo">
+												<input type="file" accept="image/*" id="imgsrc1" onchange="changeinp(this)" class="imgsrc rexcel"/>
+												上传照片
+											</div>
+											<span class="zptd hid" onclick="zptdclick(this)">1</span>
+										</td>
+										<td>
+											<span class="spbot spdel" onclick="deltr(this)">－</span>
+										</td>
+										<td>
+											<span class="anniu"  onclick="clianniu(this)">按钮</span>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="picwall" id="picwallid" style="background-color: white;border-radius: 10px;">
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="right" id="rightdiv">
+				<div name="content" id="editor">
+				</div>
+                <div id = "transverhtml">
+
+                </div>
+			</div>
+		</div>
+		
+		<script src="./js/qiaoliang.js"></script>
+		<script src="./ckeditor5-build-classic-master/build/ckeditor.js"></script>
+		<script>
+		    var data;
+		    ClassicEditor.create(document.querySelector('#editor'), {
+		            ckfinder: {
+		                uploadUrl: '/'
+		            }
+		        }
+		    ).then(editor => {
+		    window.editor = editor;
+		    data = editor.getData();
+		    // console.log(data);
+		    } )
+		    .catch(error => {
+		        // console.log(error);
+		    } );
+
+
+		</script>
+	</body>
+</html>
