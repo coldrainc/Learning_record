@@ -24,9 +24,9 @@
 			
 			<div class="left noleftch" id="leftdiv" style="top: 3px">
 				
-				<div id="topid" class="overtop" style="background-color:#d1e1f1">
+				<div id="topid" class="overtop" >
 					<label>桥名：</label>
-					<input type="text" id="topidqm" autoComplete="off" />
+					<input type="text" id="topidqm" autocomplete="off" />
 					<label>时间：</label>
 					<input type="date" id="topidtime" />
 					<input  type="button" onclick="clickhappen(this)" value="查询"/>
@@ -39,15 +39,15 @@
 					</div>		
 				</div>
 				
-				<div class="head top" style="background-color:#d1e1f1">
+				<div class="head top" >
 					<div class="tit qm">
 						<label>桥名：</label>
-						<input type="text" id="qm" autoComplete="off"/>
+						<input type="text" id="qm" autocomplete="off"/>
 					</div>
 					<div class="tit lx" >
 						<label>类型：</label>
 						<input type="text" id="lx" onchange="partFunction()"/>
-						<div class="yinchang hidimg" id="lxyc" style="border: none;">
+						<div class="yinchang hidimg menu" id="lxyc" style="border: none;">
 							<ul class="ul hid" id="lxul">
 							</ul>
 						</div>
@@ -55,7 +55,7 @@
 					<div class="tit gj">
 						<label>构件：</label>
 						<input type="text" id="gj"/>
-						<div class="yinchang hidimg" id="gjyc" style="border: none;">
+						<div class="yinchang hidimg menu" id="gjyc" style="border: none;">
 							<ul class="ul hid" id="gjul">
 
 							</ul>
@@ -78,7 +78,7 @@
 					<div class="tit bw">
 						<label>评价部位：</label>
 						<input type="text" id="bw"/>
-						<div class="yinchang hidimg" id="bwyc" style="border: none">
+						<div class="yinchang hidimg menu" id="bwyc" style="border: none">
 							<ul class="ul hid" id="bwul" >
 							</ul>
 						</div>
@@ -104,7 +104,7 @@
 						<div class="tit exct" >
 							<label style="margin-top: 5px;">标题一：</label>
 							<input type="text" id="biao" value="桥梁概况" />
-							<div class="yinchang hidimg" id="byc">
+							<div class="yinchang hidimg menu" id="byc">
 								<ul class="ul hid" id="bul">
 									<li class="bli">桥梁概况</li>
 									<li class="bli">检测结果汇总</li>
@@ -130,9 +130,7 @@
 						</div>
 						
 						<div class="tit re" id="scwj">
-								<pre>
-									<input type="file" name="xlfile" id="xlf" />
-									</pre>
+									<input type="file" name="xlfile" id="xlf"/>
 									<a id="out"></a>
 									<a id="htmlout"></a>
 							<!--<input type="file" onchange="importf(this)" accept="application/msexcel" id="readexcel" class="rexcel"/>-->
@@ -150,8 +148,8 @@
 						</div>
 						
 						<div class="exceltable hid" id="contable">
-							<span class="spbot spadd" onclick="addtr('','','','','',0)">＋</span>
-							<table class="tablehead table table-striped" id="tablepar">
+							<div class="spbot spadd" onclick="addtr('','','','','',0)">＋</div>
+							<table class="tablehead hovertable table-striped table" id="tablepar">
 								<thead>
 									<tr>
 										<th>序号</th>
@@ -174,7 +172,7 @@
 										</td>
 										<td class="exceltd" onclick="exceltdcli(this)">
 											<span class="tdsp hid"></span>
-											<input type="text"id="qsgj" class="excelinput blo"/>
+											<input type="text" id="qsgj" class="excelinput blo"/>
 										</td>
 										<td class="exceltd" onclick="exceltdcli(this)">
 											<span class="tdsp hid" id="qslxsp"></span>
@@ -182,7 +180,7 @@
 										</td>
 										<td class="exceltd" onclick="exceltdcli(this)">
 											<span class="tdsp hid"></span>
-											<input type="text"id="bhlx" class="excelinput blo"/>
+											<input type="text" id="bhlx" class="excelinput blo"/>
 										</td>
 										<td class="exceltd" onclick="exceltdcli(this)">
 											<span class="tdsp hid"></span>
@@ -194,9 +192,9 @@
 										</td>
 										<td class="exceltd" onclick="exceltdcli(this)">
 											<span class="tdsp hid"></span>
-											<input type="number"id="pdbd" class="excelinput blo"/>
+											<input type="number" id="pdbd" class="excelinput blo"/>
 										</td>
-										<td class="imgsctd">
+										<td class="imgsctd" align="center">
 											<div class="scimg blo">
 												<input type="file" accept="image/*" id="imgsrc1" onchange="changeinp(this)" class="imgsrc rexcel"/>
 												上传照片
@@ -204,10 +202,10 @@
 											<span class="zptd hid" onclick="zptdclick(this)">1</span>
 										</td>
 										<td>
-											<span class="spbot spdel" onclick="deltr(this)">－</span>
+											<div class="spbot spdel" onclick="deltr(this)">－</div>
 										</td>
 										<td>
-											<span class="anniu"  onclick="clianniu(this)">按钮</span>
+											<div class="anniu"  onclick="clianniu(this)">按钮</div>
 										</td>
 									</tr>
 

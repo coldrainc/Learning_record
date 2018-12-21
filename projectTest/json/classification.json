@@ -1,0 +1,30 @@
+{
+"RECORDS":[
+{
+"cid":1,
+"_Technical_status":null,
+"class1":"[95,100] ",
+"class2":"[80,95）",
+"class3":"[60,80）",
+"class4":"[40,60）",
+"class5":"[0,40）",
+"tablename":"桥梁技术状况分类界限表 ",
+"ssectionname":"桥梁技术状况分类界限",
+"sectionname":" 桥梁技术状况评定计算",
+"chaptername":"桥梁技术状况评定"
+},
+{
+"cid":2,
+"_Technical_status":null,
+"class1":"[95,100]",
+"class2":"[80,95）",
+"class3":"[60,80）",
+"class4":"[40,60）",
+"class5":"[0,40）",
+"tablename":"桥梁技术状况分类界限表",
+"ssectionname":"桥梁技术状况分类界限",
+"sectionname":"桥梁技术状况评定计算",
+"chaptername":"桥梁技术状况评定"
+}
+]
+}

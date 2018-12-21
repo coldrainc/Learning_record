@@ -43,6 +43,7 @@ body{
 	position: absolute;
 	/* border: 1px solid #999999; */
 	float: left;
+
 	width: 50%;
 	min-height: 100%;
 	height: auto;
@@ -51,7 +52,7 @@ body{
 	
 }
 .overtop{
-
+	-moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333;
   margin-top:50px ;
 	width: 100%;
 	top: 100px;
@@ -172,7 +173,8 @@ body{
 	width: 100%;
 	font-family: "微软雅黑";
     font-size: 12px;
-    background-color:#d1e1f1;
+		/* background-color:#d1e1f1; */
+		/* background: transparent; */
     border-radius:15px;
 	
 }
@@ -180,15 +182,15 @@ body{
 .top{
 	clear: all;
 	display: block;
-	margin-button: 55px;
-	 background-color:red;
+	margin-bottom: 55px;
+	/* -moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333; */
 }
 
 .bottom{
 	clear: all;
 	display: block;
 	border-radius:15px;
-	
+	-moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333;
 }
 
 .show{
@@ -259,6 +261,7 @@ body{
 	border-color:none;
 	outline: none;
 	float: left;
+
 	border-radius:3px,3px,3px,3px; 
 	border: 1px solid #ccc; 
     padding: 7px 0px;
@@ -288,8 +291,9 @@ body{
 
 .tj:hover{
 	background-image: url(../img/add1.png);
-	background-color: #999999;
+	background-color: rgb(78, 172, 209);
 }
+
 
 .hid{
 	display: none;
@@ -316,7 +320,9 @@ body{
 .bloimg{
 	background-image: url(../img/top1.png);
 }
-
+.yinchang{
+	position: relative;
+}
 .yinchang .ul{
 	background: white;
 	position: absolute;
@@ -326,20 +332,27 @@ body{
 	max-height: 200px;
 	border: 1px solid #999999;
 	margin-left: -104px;
-	margin-top: 18px;
+	margin-top: 28px;
 	overflow: scroll;
 }
 
 .yinchang .ul{
+	border: 0;
+	background: transparent;
 	cursor: pointer;
 }
 
 .yinchang .ul li{
-	border-bottom: 1px solid #999999;
+	border-bottom: 1px solid #58aee0;
+	background: rgb(160, 222, 247);
+	text-align: center;
+	border-radius: 2px;
+	/* height: 20px; */
+	font-weight: bolder;
 }
 
-.yinchang .ul li:hover{
-	background: #DDDDDD;
+.yinchang .ul li:hover{	
+	background:rgb(78, 172, 209)
 }
 
 .yinchang .ul li:last-child {
@@ -359,26 +372,20 @@ body{
 	float: left;
 }
 
-.re{
-	border-radius: 4px;
-	cursor: pointer;
-	float: left;
-	position: relative;
-	padding: 3px 5px;
-
-	/* overflow: hidden; */
-	color:#000;
-	background-color: white;
-	border: 1px solid #999999;
-	margin-left: 22%;
-
+/* #scwj {
+	border: 0;
+	margin: 0;
+	padding: 0;
+} */
+#xlf {
+	width: 200px;
+	height: 60px;
+	border: 0;
+	filter:alpha(opacity=0);
 }
-
-.re:hover{
-	color:#fff;
-	background-color: #999999;
+#scwj{
+	display: none;
 }
-
 .rexcel{
 	position: absolute;
 	width: 100%;
@@ -400,7 +407,7 @@ body{
   width: 50px;
   margin: 4px 10px;
   border-radius: 5px;
-  background: rgb(160, 222, 247);
+  background: rgb(53, 164, 207);
   color: white;
 	border: 1px gainsboro solid;
 	line-height: 22px;
@@ -416,13 +423,19 @@ body{
 
 .save:hover{
 	color:#fff;
-	background: rgb(78, 172, 209);
+	background: rgb(47, 127, 202);
 }
 
-.tablehead{
-	position: relative;
+.tablehead {
 	width: 94%;
-	border: 1px solid #999999;
+	position: relative;
+}
+.tablehead td{
+	height: 32px;
+} 
+/* .tablehead{
+
+	width: 94%;
 	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 	font-size: 14px;
 	border-collapse: collapse;
@@ -432,14 +445,11 @@ body{
 
 .tablehead th,td{
 	background: white;
-	border: 1px solid #999999;
 	text-align: center;
 	vertical-align: middle;
 }
 
-.tablehead td{
-	height: 32px;
-}
+*/
 
 tbody>tr{
 	position: relative;
@@ -452,6 +462,7 @@ tbody>tr{
 	border: 1px solid #999999;
 	padding: 0 3px;
 	cursor: pointer;
+
 }
 
 .spdel{
@@ -463,10 +474,6 @@ tbody>tr{
 	cursor: pointer;
 }
 
-.spbot:hover{
-	background-color: #999999;
-	color: white;
-}
 
 .exceltd:nth-child(1){
 	width: 4%;
@@ -479,7 +486,7 @@ tbody>tr{
 	width: 8%;
 }
 .exceltd:nth-child(4){
-	width: 40%;
+	width: 35%;
 }
 .exceltd:nth-child(5){
 	width: 8%;
@@ -494,7 +501,7 @@ tbody>tr{
 	width: 8%;
 }
 .exceltd:nth-child(9){
-	width: 8%;
+	width: 13%;
 }
 
 .excelinput{
@@ -505,12 +512,14 @@ tbody>tr{
 	font-size: 16px;
 	border: none;
 	outline: none;
-	height: auto;
-	line-height: auto;
-	width: inherit;
+	height: 100%;
+	line-height: 100%;
+	/* margin: 0; */
+	padding: 0 !important;
+	/* width: inherit; */
 	width: 100%;
 	overflow: hidden;
-	background-color: white;
+	background-color: rgb(255, 255, 255);
 }
 
 .tdsp{
@@ -613,13 +622,7 @@ tbody>tr{
 	display: none;
 }
 
-#scwj{
-	display: none;
-}
 
-#scwj{
-	display: blcok;
-}
 
 .anniu{
 	border: 1px solid #999999;
@@ -631,4 +634,28 @@ tbody>tr{
 .anniu:hover{
 	background-color: #999999;
 	color: white;
+}
+table.hovertable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+	}
+table.hovertable th {
+	background-color:#c3dde0;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.hovertable tr {
+	background-color:#d4e3e5;
+}
+table.hovertable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
 }

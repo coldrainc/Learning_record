@@ -90,7 +90,7 @@ $.ajax({
 });
 
 $.ajax({
-	url:"/static/json/qualittwo.json",
+	url:"../json/qualittwo.json",
 	type:"get",
 	async : false,
 	dataType:"json",
@@ -100,7 +100,7 @@ $.ajax({
 	}
 });
 $.ajax({
-	url:"/static/json/classification_weight.json",
+	url:"../json/classification_weight.json",
 	type:"get",
 	async : false,
 	dataType:"json",
