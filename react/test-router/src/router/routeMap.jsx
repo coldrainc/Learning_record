@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {BrowserRouter as Router, Route,} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import App from '../App';
 import Home from '../containers/Home/';
@@ -14,14 +14,15 @@ class RouteMap extends Component {
   }
   render() {
     return (
-      <Router history={this.props.history} onUpdate={this.updateHandle}>
-        <div>
-          <App/>
-          <Route path='/' component={Home}></Route>
-          <Route path='/list' component={List}></Route>
-          <Route path='/detail/:id' component={Detail}></Route>
-          <Route path="*" component={NotFound}></Route>
-        </div>
+      <Router>
+        <App>
+          <Switch onUpdate={this.updateHandle}>
+            <Route path='/detail/:id' component={Detail}></Route>
+            <Route path='/list' component={List}></Route>
+            <Route path='/' exact component={Home}></Route>
+            <Route path="*" component={NotFound}></Route>
+          </Switch>
+        </App>
       </Router>
     )
   }

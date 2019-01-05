@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <button onclick="console.log(this)">show me </button>
+    <button onclick="(function() {console.log(this)})()">show inner this</button>
+    <button onclick="(function(){ 'use strict'; console.log(this)})()">use strict</button>
+    <button onclick="click1()">function</button>
+  </div>
+
+  <script>
+    function click1() {
+      console.log(this);
+    }
+  </script>
+</body>
+</html>

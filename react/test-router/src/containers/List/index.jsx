@@ -17,6 +17,7 @@ class List extends Component {
   }
   clickHandle = (value) => {
     const {history} = this.props;
+    console.log(history);
     history.push('/detail/' + value);
   }
 }

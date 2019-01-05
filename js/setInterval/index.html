@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <span>倒计时:</span>
+    <span id="time"></span>
+  </div>
+  <input type="text" id="num" value="10"/>
+  <button id="submit">提交</button>
+  <script>
+    var time = document.getElementById('time');
+    var submit = document.getElementById('submit');
+    submit.addEventListener('click', function () {
+      clearInterval(interval)
+      var num = document.getElementById('num').value;
+      time.innerText = num
+      if(num) {
+       var interval = setInterval(function(){
+          console.log(num);
+          num = num - 1;
+          time.innerText = num;
+          if(num === 0) {
+            clearInterval(interval);
+          }
+        }, 1000)
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="uls">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    var uls = document.getElementById('uls');
+    // 事件委托 减少dom操作 就是性能优化
+    // uls.addEventListener('click', function(event) {
+    //   var event = event || window.event
+    //   event.target.nodeName.toLowerCase() == 'li' 
+    // 点击target就是点击li， 这就是事件委托
+    //   console.log(event.target);
+    // })
+    
+    // 非事件委托， dom操作过多性能不好
+    // 使用闭包
+    var lis = uls.getElementsByTagName('li')
+    for(var i = 0; i < lis.length; i++) {
+      lis[i].addEventListener('click', (function(i) {
+        return function() {
+          console.log(i);
+        }
+      })(i))
+    }
+
+
+  </script>
+</body>
+</html>

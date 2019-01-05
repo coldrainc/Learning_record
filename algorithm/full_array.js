@@ -24,14 +24,14 @@ function permutation(arr, len, index) {
     num++;
     let arr2 = arr.slice(0,4);
     arr1.push(arr2)
-  }else {
-    for(let i = index; i < len; i++) {
-      // let arr2 = arr.slice(0, 4);
-      if(isSwap(arr, len, i)){ // p\判断是否交换
-        swap(arr, index, i);// 将第i个元素交换到当前index下标下，
-        permutation(arr, len, index+1);
-        swap(arr, index, i)// 将值换回来，使得在同一个位置下次全排列值是原来的
-      }
+    return;
+  }
+  for(let i = index; i < len; i++) {
+    // let arr2 = arr.slice(0, 4);
+    if(isSwap(arr, len, i)){ // p\判断是否交换
+      swap(arr, index, i);// 将第i个元素交换到当前index下标下，
+      permutation(arr, len, index+1);
+      swap(arr, index, i)// 将值换回来，使得在同一个位置下次全排列值是原来的
     }
   }
 }

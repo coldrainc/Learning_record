@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+        <li>test4</li>
+        <li>test5</li>
+        <li>test6</li>
+        <li>test7</li>
+        <li>test8</li>
+        <li>test9</li>
+        <li>test10</li>
+    </ul>
+    <script>
+        var lis = document.querySelectorAll('li');
+        // for(let i = 0; i < lis.length; i++) {
+        //     lis[i].addEventListener('click', function() {
+        //       console.log(i);
+        //     })
+        // }
+
+        // for(var i = 0; i < lis.length; i++) {
+        //   (function(i) {
+        //     lis[i].addEventListener('click', function() {
+        //       console.log(i);
+        //     })
+        //   })(i);
+        // }
+
+        for(var i = 0; i < lis.length; i++) {
+          lis[i].addEventListener('click', function(i){
+            return function() {
+              console.log(i);
+            }
+          }(i), true)
+        }
+    </script>
+</body>
+</html>
