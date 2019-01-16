@@ -104,3 +104,13 @@
   如果此元素为inline元素，则containing block为能够包含这些元素生成第一个和最后一个inlinebox的padding box 除margin boder外的区域的最小矩形
   否则 则由这个祖先元素的padding box 构成
   如果都找不到 则为initial containing block
+  static /relative: 简单 
+- dispaly: none/hidden
+  display: none 不显示并且在文档布局中不再分配空间
+  dispaly： hidden 不显示但是保存原来的空间
+- overflow:
+  visible 默认值内容不会被修剪会呈现在元素框外
+  hidden 内容会被修剪并且其余内容不可见
+  scroll 内容会被修剪 但是会显示滚动条以便查看其他内容
+  auto 如果内容被修剪， 则浏览器会显示滚动条
+  inheirt 继承副元素的overflow的值
