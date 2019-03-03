@@ -16,7 +16,7 @@
   1. 样式与html分离， 有助于后期更改样式。
   2. 对浏览器来说， 样式文件由于是单独的文件， 可以在本地建立缓存， 下次就不需要在加载样式文件， 有利于加快网页的访问速度
   3. 对于服务器来说， 如果样式文件浏览器减少加载， 那么服务器就可以减少下载流量可以节约服务器的宽带
-  而且样式直接写在2html中不便于管理， 不便于复用
+  而且样式直接写在html中不便于管理， 不便于复用
 - css优先级算法
   元素选择符： 1
   class 选择符 10
@@ -64,6 +64,7 @@
   relative(相对定位): 不脱离文档流， 相对自身进行定位
   absolute(绝对定位): 参考最近的一个定位
   fixed(固定定位): 相对浏览器的窗口进行定位
+  sticky 粘性布局 兼容性太差了 relative和absolute的结合 在设置的值内是relative 超过设置的值将会使用fixed定位
 - css3新特性
   RGBA和透明度
   backgound-image backgound-origin(content-box/paddingbox/border-box)
@@ -104,3 +105,50 @@
   如果此元素为inline元素，则containing block为能够包含这些元素生成第一个和最后一个inlinebox的padding box 除margin boder外的区域的最小矩形
   否则 则由这个祖先元素的padding box 构成
   如果都找不到 则为initial containing block
+- css
+  BFC
+    块级格式化上下文
+    浮动元素和绝对定位元素，非块级盒子的块级容器（例如inline-block）以及overflow不为visible的块级盒子都会创建BFC
+    float不为none
+    position不是static和relative
+    display的值是inline-block，table-cell，flex，table-caption，inline-flex
+    overflow不为visible
+    BFC是一个独立的布局环境，其中元素布局不受外界影响，块盒和行盒都会样子父元素的边框排列
+    当连个元素在不同的BFC中时 利用BFC避免外边距折叠
+  - 选择器
+    *
+    #id 100
+    .class 10
+    element 1
+    element1, element2 选择多个
+    element1 element2  后代选择器
+    element1>element2 子元素选择器
+    element1+element2 兄弟选择器
+    [attribute] [target]选择所有带有该属性的元素
+    [attribute=value] [target=_blank] 选择所有属性target为_blank的元素
+    [attribute~=value] 选择所有包含value的元素
+    。。。。。。。。
+  盒子模型， 怪异盒子模型（兼容性问题）
+  - 伪类和伪元素
+    伪类 :focus :hover :link :visited
+    伪元素 :before :after
+  实现居中
+  display
+  overflow
+  position
+  inline， block， inline-block
+  上下margin问题
+  inline 是否有margin， padding
+  响应式
+  有哪些块级元素， 行内元素
+  为什么分离css
+  float
+  相对单位
+    rem 相对HTML根元素font-size 的大小
+    em相对当前对象的文本font-size如果没有则相对浏览器默认字体大小
+    VH当前屏幕高度
+- 布局
+  flex
+    一维布局只要在父级元素中设置display为flex就可以实现弹性布局 布局简单
+  grid
+    二维布局 fr 自适应单位 为剩余空间分配位置 有点想flex: 1;这种

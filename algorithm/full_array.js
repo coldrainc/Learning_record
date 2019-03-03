@@ -19,10 +19,11 @@ function swap(arr, i, j) { // 交换数组的两个值
 }
 
 // 递归实现全排列
+// 参数传递的时候注意数组为引用类型，不能直接使用
 function permutation(arr, len, index) {
   if(index == len){ // 结束
     num++;
-    let arr2 = arr.slice(0,4);
+    let arr2 = arr.slice(0,4); 
     arr1.push(arr2)
     return;
   }

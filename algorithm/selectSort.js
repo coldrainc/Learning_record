@@ -1,3 +1,6 @@
+// 选择排序
+// 每次找到排序中最小的值，放在最前面
+
 function selectSort(arr) {
   var tmp, index;
   for(let i = 0; i < arr.length; i++) {
@@ -11,7 +14,6 @@ function selectSort(arr) {
     arr[index] = arr[i];
     arr[i] = tmp;
   }
-  console.log(arr);
   return arr;
 }
 var arr = [199, 19, 78, 1, 22, 19]
