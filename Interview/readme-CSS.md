@@ -147,8 +147,23 @@
     rem 相对HTML根元素font-size 的大小
     em相对当前对象的文本font-size如果没有则相对浏览器默认字体大小
     VH当前屏幕高度
+  meta是head区的一个辅助性标签。其主要作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并指向新的页面，实现网页转换时的动态效果，控制页面缓冲，网页定级评价，控制网页显示的窗口等！
 - 布局
   flex
     一维布局只要在父级元素中设置display为flex就可以实现弹性布局 布局简单
   grid
-    二维布局 fr 自适应单位 为剩余空间分配位置 有点想flex: 1;这种
+    二维布局 fr 自适应单位 为剩余空间分配位置 有点像flex: 1;这种
+- HTML 新特性
+  - 语义化标签
+  <header>
+  <footer>
+  - 增强型表单
+  - 视屏，音频
+  - canvas
+  - svg
+  - 拖放API
+- css3
+  transform
+  animation
+  transition
+  

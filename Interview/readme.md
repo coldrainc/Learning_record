@@ -52,6 +52,7 @@
         响应头主要由Cache-Control、 Connection、Date、Pragma等组成。
       响应报文
         就是服务器响应请求返回的数据，主要由HTML，css，js，图片文件组成。
+        浏览器拿到完整的html页面代码开始解析和渲染，如果遇到外部的css或者js，图片一样的步骤
     7. 渲染页面，构建DOM树
       浏览器解析渲染呈现给用户， 解析和渲染，渲染前构建DOM数和CSSDOM
       回流  当内容结构内容位置发生尺寸发生改变，需要重新计算样式和渲染树
@@ -290,7 +291,7 @@
     自由变量是可以在函数中使用，但是既不是函数的变量也不是参数。
   - 作用域
     变量作用域两种：全局变量、局部变量。js中函数内部可以读取全局变量，函数外部不能读取函数内部的局部变量 这是就应该到闭包来获取函数内部的值
-  
+
   - 使得对象的属性无法改变
   - cookie localStore 和 sessionStore
     cookie: 由服务器生成 默认是关闭浏览器后失效， 可以设置失效时间
@@ -346,7 +347,7 @@
   重绘
   回流
   对语义化的理解
-
+    - 有利于团队的开发和维护，方便其他设备解析
 - 浏览器
   UDP TCP的区别
   同源策略
@@ -356,6 +357,7 @@
 - 七层协议四层协议
 
 - react
+
   - 为什么使用react
     简单：仅仅表达应用在任何一个时间点该呈现的样子，当数据改变时React会自动处理用户界面的更新
 组件在传递属性为函数的时候需要接收参数不能直接加括号this.handle() 需要使用函数来包裹
@@ -368,8 +370,9 @@
     state是组件自己管理的数据，控制自己的状态，相对组件自己来说是可变；
   props
     从组件外部传入组件内部的数据，一般就是父子组件的传递，可读和不可变，
+
   - redux的实现原理
-    只是同步状态，可以使用redux-thunk或者saga
+      只是同步状态，可以使用redux-thunk或者saga
     redux将整个应用状态储存到store里面，其实就是一颗状态树
     store中每一个state对应一个View需要修改状态的时候只能通过dispatch派发一个action，然后reducer通过action来修改store里面的数据，并且使用subscribe发布订阅者模式将监听函数放进数组，当通过dispatch派发action获得新的state也就是状态后将监听函数再执行一次，就是重新渲染获取新的状态
     组件可以dispatch派发action行为给store，当reducer接收到action根据执行响应的操作，修改数据，数据修改后react组件将会重新渲染
@@ -378,6 +381,7 @@
       唯一数据源
       保持只读状态 组件修改数据需要通过dispatch派发action，然后执行对应的reducer来改变数据
       store中一个state对应一个View
+
   - react声命周期
     <https://images2015.cnblogs.com/blog/588767/201612/588767-20161205190022429-1074951616.jpg>
     constructor
@@ -399,6 +403,7 @@
     UnMount
     componentWillMount  在这你可以取消网络请求，或者移除所有与组件相关的事件监听器
     结束
+  
   - router
     路由其实就是保住视图和URL的同步，用户通过手动输入或者页面交互来改变URL，然后通过同步或者异步来向服务器发送请求
     通过对应的URL来渲染对应的视图
@@ -406,6 +411,7 @@
      history 对象是整个路由系统的核心
      hash hashChange
     withRouter 高阶组件通过context来给没有经过Route渲染的组件提供 history， match， location
+
   - 性能优化
     - 使用 production 版本的react.js
     - 使用key来帮助React识别列表中所有子组件的最小变化。
@@ -427,18 +433,22 @@
       immutableJS 进行深层比较
       然后使用is()函数来比较 两个immutable数据是否相同
       在遍历的时候 key 不要使用index 索引 因为当遍历的时候顺序不一样会导致key的变化，会造成性能浪费
-  setState 不能保证同步
+
+  - setState 不能保证同步
     在合成事件和钩子函数中是异步的，在原生事件和setTimeout中是同步的
     - 合成事件 onChange onClick
+      为了避免DOM事件的滥用导致性能受影响，屏蔽不同浏览器之间底层的差异 就是将DOM事件进行了一个封装
       在document处监听所有支持的事件，当事件发生并冒泡至document处时，React将事件内容封装交给中间层SyntheticEvent（负责所有事件合成）当事件触发的时候，对使用统一的分发函数dispatchEvent将指定函数执行。
     - 钩子函数 生命周期函数 hooks 本质上就是一类特殊的函数
+
     合成事件和钩子函数的调用顺序在更新之前，导致合成事件和钩子函数没办法拿到更新后的值
     父组件传递给子组件state的时候，props是不能同步刷新的re-render不能同步刷新
     不能保证同步执行 是性能优化
     调用setState的时候并不会立马修改state，而是把需要修改的状态放在一个队列中， React会优化真正的执行机制，并且出于性能原因会将多次setState合并成一次修改，
     setState会在最后批量执行
   保证数据统一
-  redux-thunk中间件
+
+  - redux-thunk中间件
     处理异步操作
     创建的action函数返回可以是一个函数参数为dispatch， getState，然后在函数里面dispatch一个action
     function add() {
@@ -456,28 +466,39 @@
             dispatch(add())
         }
     }
-  可控组件
+
+  - 可控组件
     维护自身状态
     组件的状态都是有组件自己来控制，也就是状态都是state中，而不是由DOM来控制
-  react element 和component 有什么区别
+
+  - react element 和component 有什么区别
     element描述了UI，是一些对UI对象表示，而component是一个函数或者类，接受输入和返回一个react element
-  refs
-    表示为对组件真正实例的引用，其实就是ReactDOM.render()返回的组件实例
-    Refs 可以用于获取一个 DOM 节点或者 React 组件的引用
-    挂到组件（这里组件指的是有状态组件）上的ref表示对组件实例的引用，而挂载到dom元素上时表示具体的dom元素节点。
-  keys
-    帮助项目来追踪项目的修改删除和添加，有助于提高性能， diff算法就跟这个有关
+
+  - refs
+    Refs 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加ref属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回
+
+  - keys
+    Keys 是 React 用于追踪哪些列表中元素被修改、被添加或者被移除的辅助标识。
+    Diff 算法中 React 会借助元素的 Key 值来判断该元素是新近创建的还是被移动而来的元素，从而减少不必要的元素重渲染，有助于提高性能，
     每个key在兄弟元素间是独一无二的，并且在map的过程中最好不要使用index作为key，因为当顺序改变时key发生了改变，React会认为数据发生了改变，就会重新渲染，造成性能浪费。
-  虚拟dom
+  
+  - 虚拟dom
     使用js对象来模拟真实的DOM树，数据更新的时候创建新的虚拟DOM通过新旧对比来获取差异，然后通过特定的render将差异的虚拟DOM渲染成真实的DOM
-  diff算法
+    虚拟DOM进行频繁修改，然后一次性比较并修改真实DOM中需要改的部分（注意！），最后并在真实DOM中进行排版与重绘，减少过多DOM节点排版与重绘损耗
+    虚拟DOM有效降低大面积（真实DOM节点）的重绘与排版，因为最终与真实DOM比较差异，可以只渲染局部
+    真实DOM频繁排版与重绘的效率是相当低的
+    例如查询操作，只需要在虚拟dom重进行操作，当需要修改的时候只需要先查询，如果需要修改，在去操作真是DOM，
+    而没有虚拟DOM每次都需要去对DOM进行操作，而DOM操作相对于js来说很浪费性能
+  
+  - diff算法
       通过对比虚拟DOM和新的虚拟DOM 传统算法 复杂度为n的3次方
     只对同级的节点进行比较
     比较组件类型 组件名字
     同一层级的节点通过key来区分
     合并操作，调用component的setState的时候，将其标记为dirty，到每一个事件循环结束，react检查所有的dirty的component重新绘制
     选择性渲染子树，可以通过重写shouldComponentUpdate来提高性能
-  类组件和函数组件
+
+  - 类组件和函数组件
     类组件有更多额外的功能，如组件自身状态和生命周期函数等，也能使组件访问store并维持状态
     当组件仅仅是接受的props，并将组件自身渲染到页面，该组件就是一个无状态组件，这时可以使用函数来创建这样的组件
   - react 新特性
@@ -491,9 +512,20 @@
       将会删除 componentWillMount componentWillReceiveProps componentWillUpdate
       添加getDerivedStateFromProps getSnapshotBeforeUpdate
       https://juejin.im/post/5b6f1800f265da282d45a79a#heading-12
+
   - 阻止渲染
     setState return null
     shouldComponentUpdate 返回false
+    render return null
+  
+  - 如何告诉React应该编译生成版本
+    通常使用Webpack中的DefinPlugin方法将NODE_EVN设置为production
+  - 性特性
+    错误处理 默认情况下某个组件出错，这个组件就会从组件树中卸载，而不是整个应用都需要刷新
+    render 返回类型增加， string boolean number null portal
+    setState 传入为null时不会触发更新
+    https://blog.csdn.net/wangrong111222/article/details/81106761
+  
 - create-react-app
   postCss 自动添加前缀
 - webpack
@@ -501,3 +533,38 @@
     由于webpack 只能 打包commonjs的js文件，对于其他资源无法加载，所以需要loder
     loader 主要用来的资源加载处理不同的文件， 作用于一种文件， 也是对webpack的扩展， 但是只是转化文件
     plugin 直接作用于webpack， 是对webpack的一些扩展，相当给webpack添加功能
+- git
+  git add 把要提交的所有修改放到暂存区
+  git commit 一次性把暂存区的所有修改提交到分支
+  git push 提交到远程仓库
+
+  代码压缩
+      1.使用CommonsChunksPlugin 提取多个chunk之间的通用模块，减少总体代码体积
+      2.把部分依赖转移到CDN上，避免每次编译过程都由Webpack处理
+      3.对一些组件库采用按需加载，避免无用的代码
+      从而能做到诸如去掉无效代码、去掉日志输出代码、缩短变量名等优化
+  https传输过程加密
+    一般意义上的https，就是服务器有一个证书。主要目的是保证服务器就是他声称的服务器，这个跟第一点一样；服务端和客户端之间的所有通讯，都是加密的。
+    客户端通过验证，证书的合法
+  mysql 和MongoDB的区别
+  mysql 数据表
+  MongoDB 集合
+    非关系型数据库(nosql ),属于文档型数据库。先解释一下文档的数据库，即可以存放xml、json、bson类型系那个的数据。这些数据具备自述性（self-describing），呈现分层的树状数据结构。数据结构由键值(key=>value)对组成。
+  typescript 和 js对比
+  深度优先
+    https://www.cnblogs.com/wuguanglin/p/DPSandBPS.html
+  服务器响应请求返回的数据
+  缓存
+  DNS
+    域名系统最为域名和IP的地址的分布式数据库
+  如何在传递props的时候不影响组件外
+    constructor中 深拷贝一份数据，然后赋值给state
+- 类型转换 [] 和 {}
+  由于空数组和空对象都是Object类型，因此用if（）判断的时候，都为true
+  在使用==会进行类型转换
+  [] == false 为true 因为 [] 最后转化为0 false 也为0
+  [0] == false 位true 最后[0] 为0 false 也为0
+  console.log(Number([])); // 0
+  console.log(Number({})); //NaN
+  （1）console.log([]==false);  //true，因为[]转化为0，false转化为0，因此为true
+  （2）console.log({}==fasle); //false，因为{}转化为NaN，因此为false`
