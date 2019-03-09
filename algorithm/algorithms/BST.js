@@ -23,7 +23,7 @@ function BinarySearchTree() {
   }
   this.insert = function(key) {
     var newNode = new Node(key);
-    if(root === null) {
+    if (root === null) {
       root = newNode
     }else {
       insertNode(node, newNode);
@@ -66,8 +66,8 @@ function BinarySearchTree() {
   }
   // 查找最大值
   var maxNode = function(node) {
-    if(node) {
-      while(node && node.right !== null){
+    if (node) {
+      while (node && node.right !== null) {
         node = node.right
       }
       return node.key
@@ -79,8 +79,8 @@ function BinarySearchTree() {
   }
   // 查找最小值
   var minNode = function(node) {
-    if(node) {
-      while(node && node.left !== null) {
+    if (node) {
+      while (node && node.left !== null) {
         node = node.left
       }
       return node.key;

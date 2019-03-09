@@ -6,6 +6,7 @@ function unique(arr) {
 }
 
 // 利用对象的key value
+// 对象传参可变的key使用 [arr[i]]
 function unique1(arr) {
   let hashTable = {};
   let data = [];

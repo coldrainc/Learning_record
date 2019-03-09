@@ -19,3 +19,20 @@ function selectSort(arr) {
 var arr = [199, 19, 78, 1, 22, 19]
 
 console.log(selectSort(arr))
+
+function selectSort1(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let t = i, tmp;
+    for (let j = i; j < arr.length; j++) {
+      if (arr[j] < arr[i]) {
+        t = j;
+      }
+    }
+    tmp = arr[i];
+    arr[i] = arr[t];
+    arr[t] = tmp;
+  }
+  return arr;
+}
+
+console.log(selectSort1(arr));

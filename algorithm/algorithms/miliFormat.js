@@ -28,3 +28,5 @@ let miliFormat2 = (num) => {
 }
 
 console.log(miliFormat(num));
+console.log(miliFormat2(num));
+console.log(0 && 2);

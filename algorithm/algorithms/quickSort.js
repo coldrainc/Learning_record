@@ -19,3 +19,20 @@ function quickSort(arr) {
 
 let arr = [100, 1, 2, 9, 20, 100];
 console.log(quickSort(arr))
+
+
+function quickSort1(arr) {
+  if (arr.length <= 1) return arr; 
+  let left = [];
+  let right = [];
+  let q = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < q) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [].concat(quickSort1(left), [q], quickSort1(right));
+}
+console.log(quickSort1(arr));

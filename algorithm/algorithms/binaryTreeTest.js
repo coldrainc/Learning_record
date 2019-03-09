@@ -12,7 +12,7 @@ function midOrder(node) {
 
 // 多叉树就是所有的子节点都保存进去
 
-// 广度优先遍历
+// 广度优先遍历 层序遍历 队列实现
 function levelOrder(node) { 
   if(!node) {
     return;
@@ -27,8 +27,8 @@ function levelOrder(node) {
   }
 }
 
-// 深度优先遍历
-function deepOrder (node) {
+// 深度优先遍历 先序遍历 栈实现
+function deepPreOrder (node) {
   if (!node) return;
   let stack = [];
   var parentNode = node;
@@ -38,10 +38,25 @@ function deepOrder (node) {
       stack.push(parentNode);
       parentNode = parentNode.left;
     } else {
-      parentNode = stack.pop();
-      stack.push(parentNode.right);
+      parentNode = stack.pop()
+      parentNode = parentNode.rightNode
     }
-
   }
 }
 
+// 中序遍历
+function deepMidOrder (node) {
+  if (!node) return;
+  let stack = [];
+  let parentNode = node;
+  while (parentNode || stack.length > 0) {
+    if (parentNode) {
+      stack.push(parentNode);
+      parentNode = parentNode.left;
+    } else {
+      parentNode = stack.pop();
+      console.log(parentNode.value);
+      parentNode = parentNode.right;
+    }
+  }
+}

@@ -12,3 +12,4 @@ function divideBy2(num) {
 }
 
 divideBy2(10);
+// 二进制转换

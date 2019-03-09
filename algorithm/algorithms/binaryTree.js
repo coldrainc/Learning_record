@@ -7,24 +7,24 @@ function BinaryTree() {
   var root = null;
   this.insert = function(key){
     var node = new Node(key);
-    if(!root){
+    if (!root){
       root = node
-    }else {
+    } else {
       insertNode(root, node);
     }
   }
   var insertNode = function(node, newNode) {
     // console.log(this)// 全局
-    if(newNode.key < node.key){
-      if(!node.left){
+    if (newNode.key < node.key) {
+      if (!node.left) {
         node.left = newNode
-      }else {
+      } else {
         insertNode(node.left, newNode)
       }
-    }else {
-      if(!node.right){
+    } else {
+      if (!node.right) {
         node.right = newNode
-      }else {
+      } else {
         insertNode(node.right, newNode)
       }
     }
