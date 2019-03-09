@@ -41,7 +41,7 @@ caleY)
 	一个块级元素如果没有设置height,其height由子元素撑开，对子元素使用了浮动之后，子元素就会脱离文档流
 	也就是说，父及元素中没有内容可以撑开其高度，这样父级元素height就会被忽略。这就是所谓的高度坍塌
       如何清除浮动
-	1.给父级元素定义高度 2.让父级元素也浮动 3.父级定义display:table 4.父元素设置overflow:hidden 
+	1.给父级元素定义高度 2.让父级元素也浮动 3.父级定义display:table 4.父元素设置overflow:hidden
 	clearfix:使用内容生成的方式清除浮动
 		.clearfix:after {  // :after选择器向选定的元素之后插入内容
    			content:""; // 生成内容为空
@@ -86,8 +86,8 @@ caleY)
 		font-size 指的是字体的高度，但是不能指定每个字形给定字体高度下的实际高度，导致了span的高度大于line-height
 
 十一、z-index属性  z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。
-			position的值的属性大于z-index   Z-index 仅能在定位元素上奏效（例如 position:absolute;）
-			元素可拥有负的 z-index 属性值
+		position的值的属性大于z-index   Z-index 仅能在定位元素上奏效（例如 position:absolute;）
+		元素可拥有负的 z-index 属性值
 
 十二、块元素和行内元素
 	1.块元素会独占一行，默认情况下，其宽度自动填满父元素宽度 行元素不会占据一行，会一直排在一行，直到一行排不下
@@ -103,16 +103,15 @@ border-left: 50px solid transparent;
 border-right: 50px solid transparent;
 
 十四、伪类：link 表示链接正常情况下（即页面加载完成时）显示的颜色
-	    hover:表示鼠标悬停时显示的颜色
-	    visited:链接被点击时显示的位置
-	    focus：元素获得光标焦点时的颜色
-	    active: 元素处于激活状态
+	hover:表示鼠标悬停时显示的颜色
+	visited:链接被点击时显示的位置
+	focus：元素获得光标焦点时的颜色
+	active: 元素处于激活状态
 	link -> visited -> hover -> focus -> active
 
 十五、雪碧图：多个图片集成在一个图片中的图
 		使用雪碧图可以减少网络请求的次数，加快允许的速度
 		通过background-position，去定位图片在屏幕的哪个位置
-
 
 
 布局面试
@@ -138,7 +137,7 @@ border-right: 50px solid transparent;
 	块状元素居中（块状元素没发用text-align）
 		1.宽度一定：margin:auto
 		2.宽度不定：块级变行内，然后在父上text-aligin
-			    float
+		float
 
 四、BFC https://juejin.im/post/5909db2fda2f60005d2093db
 	理解：BFC是css布局的一个概念，是一块独立的渲染区域，一个环境，里面的元素不会影响到外部的元素
@@ -157,14 +156,14 @@ border-right: 50px solid transparent;
 		 2.可以阻止元素被浮动元素覆盖
 		 3.可以包含浮动元素---清除内部浮动 原理:：触发父div的BFC属性，使下面的子div都处在父div的同一个BFC区域之内
 		 4.分属于不同的BFC时，可以阻止margin重叠
-	
+
 	js面试
 一、 this的指向
 	1.当函数作为对象的方法被调用时，this就会指向该对象。
 	2.作为普通函数，this指向window。
 	3.构造器调用，this指向返回的这个对象。
 	4.箭头函数  箭头函数的this绑定看的是this所在函数定义在哪个对象下，就绑定哪个对象
-      		    如果有嵌套的情况，则this绑定到最近的一层对象上
+    如果有嵌套的情况，则this绑定到最近的一层对象上
 
 		this指向的固定化，并不是因为箭头函数内部有绑定this的
 		机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外
@@ -186,7 +185,7 @@ border-right: 50px solid transparent;
 	内存泄漏：在程序申请内存后，无法释放已申请的内存空间，一次内存泄漏危害可以忽略，但内存泄漏堆积后果很严重，无论多少内存，迟到会被占光
 
    举列子：闭包中的this,对象函数。匿名函数返回函数return function
- 
+
    作用域：(由当前环境与上层环境一系列的变量对象组成！！！保证 当先执行环境里，有权访问的变量和函数是有序的，作用域链变量只能被向上访问)
 	定义：由当前环境与上层环境的一系列变量对象组成(函数嵌套函数，内部一级级往上有序访问变量或对象)
 	作用是：保证当前执行环境里，有权访问的变量和函数时有序的，作用域链的变量只能被向上访问
@@ -242,7 +241,7 @@ border-right: 50px solid transparent;
 			promise.all() 里面状态都改变，那就会输出，得到一个数组
 			promise.race() 里面只有一个状态变为rejected或者fulfilled即输出
 			promis.finally()不管指定不管Promise对象最后状态如何，都会执行的操作（本质上还是then方法的特例）
- 
+
 五、前端事件流
 	事件流描述的是从页面中接受事件的顺序，事件 捕获阶段 处于目标阶段 事件冒泡阶段 addeventListener 最后这个布尔值参数如果是true，表示在捕获阶段调用事件处理程序；如果是false，表示在冒泡阶段调用事件处理程序。
 	  1、事件捕获阶段：实际目标div在捕获阶段不会接受事件，也就是在捕获阶段，事件从document到<html>再到<body>就停止了。
@@ -286,6 +285,9 @@ border-right: 50px solid transparent;
 七、js的new操作符做了什么？
 	new操作符创建了一个空对象，这个对象原型指向构造函数的prototype，执行构造函数后返回这个对象（return this）。
 	如果不要父类的属性跟方法，在函数的prototype上去new这个父类。
+	obj = {};
+	obj.__proto__ = prototype;
+	Obj.call(obj);
 
 八、改变函数内部this指针的指向函数(bind,apply,call)
 	通过apply和call改变函数的this指向，他们两个函数的第一个参数都是一样的表示要改变指向的那个对象，第二个参数，apply是数组，而call则是arg1,arg2...这种形式。
@@ -773,7 +775,7 @@ this.setState({ data:data });
 七、web缓存
 	1.web缓存就是存在于客户端与服务器之间的一个副本、当你第一个发出请求后，缓存根据请求保存输出内容的副本
 	2.缓存的好处
-            （1）减少不必要的请求
+      （1）减少不必要的请求
 	    （2）降低服务器的压力，减少服务器的消耗
 	    （3）降低网络延迟，加快页面打开速度（直接读取浏览器的数据）
 

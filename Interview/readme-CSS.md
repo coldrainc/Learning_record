@@ -44,6 +44,9 @@
       left: 50%;
       top: 50%;
       margin: -100px;
+    父元素设置display为flex
+    justify-content: center;
+    align-items: center;
   2. 绝对定位的左右居中：
     border: 1px solid black;
     position: absolute;

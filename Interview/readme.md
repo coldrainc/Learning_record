@@ -23,6 +23,11 @@
     提升用户体验
     node 也可以实现服务器端的一些事情
     前端是最贴近用户的
+  能够实习多久
+  工资
+  有机会转正吗
+  入职时间
+  月薪是税前还是税后
 - js
   - 一个页面从输入 URL 到页面加载完的过程中都发生了什么事情？越详细越好
     1. 浏览器中地址栏中输入URL并回车。
@@ -265,7 +270,20 @@
       }
   - 异步
     - promise
+      解决异步问题，通过同步的方式来写异步代码， 
+      解决地狱回调的问题
+      串行
+      A.then(B).then.(C)
     - async await
+      async函数返回的就是一个promise对象
+      await等待的是一个返回值
+      如果它等到的不是一个 Promise 对象，那 await 表达式的运算结果就是它等到的东西。
+      如果它等到的是一个 Promise 对象，await 就忙起来了，它会阻塞后面的代码，等着 Promise 对象 resolve，然后得到 resolve 的值，作为 await 表达式的运算结果。
+      串行
+      await A
+      await B
+      await只能在 async函数中使用
+
   - 实现对象的遍历 使用obj.hasOwnProperty(key) 来判断是否是对象的属性
     Object.keys() 获取对象所有属性的key 是一个数组
     使用for in 遍历key for of 遍历每一项
@@ -293,13 +311,15 @@
     变量作用域两种：全局变量、局部变量。js中函数内部可以读取全局变量，函数外部不能读取函数内部的局部变量 这是就应该到闭包来获取函数内部的值
 
   - 使得对象的属性无法改变
-  - cookie localStore 和 sessionStore
-    cookie: 由服务器生成 默认是关闭浏览器后失效， 可以设置失效时间
+  - cookie localStore 和 sessionStore， session
+    cookie: 由服务器生成 在发送响应的时候跟随在响应头部传给客户端 默认是关闭浏览器后失效， 可以设置失效时间
       用来保存用户信息，用来给服务器辨别身份，只能保存4kb的数据
     localStore:
       用来本地保存数据， 可以永久保存数据， 可以保存5M的数据。
     sessionStore:
       跟localStore差不多也是用来保存数据的，但是只是将数据在一次会话中保存。session结束后将会清除sessionStore中的数据。
+    session:
+      服务端用于记录用户状态的用户标记具体用户的的机制，在服务端保存的用来跟踪用户状态的数据结构。在浏览器关闭后这次session就消失
   - null等于null吗 undefined等于undefined吗
   - symbol 的作用
     有象征性的独一无二的 作为标签
@@ -343,25 +363,54 @@
   - 如何判断数据类型 typeof 和 instanceof
   - 并发
     JavaScript 用不阻塞， 处理IO通常由事件和回调函数来进行实现
+  - 判断是否是对象
+    Object.prototype.toString.call(bar) === "[object, Object]"
 - html
   重绘
   回流
-  对语义化的理解
+  - 对语义化的理解
+    - 易于阅读代码
+    - header footer H1-H6 strong nav aside section
     - 有利于团队的开发和维护，方便其他设备解析
+    - 有利于爬虫的爬取
 - 浏览器
   UDP TCP的区别
   同源策略
   跨域
 - http
+  - https传输过程加密
+  对称加密 使用相同的的秘钥加密解密
+  非对称加密 有一个公钥， 使用公钥加密，使用秘钥解密
+  一般意义上的https，就是服务器有一个CA证书。主要目的是保证服务器就是他声称的服务器，这个跟第一点一样；服务端和客户端之间的所有通讯，都是加密的。
+  客户端通过验证，证书的合法
+  https协议需要到ca申请证书，一般免费证书很少，需要交费
+  http的连接很简单，是无状态的；
+  HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全
+  http 80 端口
+  https 443 端口
   https://www.cnblogs.com/ranyonsue/p/5984001.html
+  - TCP UDP
+    TCP注重数据安全性，UDP注重数据传输快
+    传输层提供端到端的可靠报文传递和错误恢复
+    TCP是点到点的，面向连接的，可靠地协议;UDP是无连接的，不可靠的，面向报文的协议
 - 七层协议四层协议
+  - 应用层
+  - 展示层
+  - 会话层
+  - 传输层
+  - 网络层
+  - 数据链路层
+  - 物理层
 
 - react
 
   - 为什么使用react
-    简单：仅仅表达应用在任何一个时间点该呈现的样子，当数据改变时React会自动处理用户界面的更新
-组件在传递属性为函数的时候需要接收参数不能直接加括号this.handle() 需要使用函数来包裹
-如 (param) => { this.handle(param) }
+    速度快，
+    跨浏览器兼容 提供标准化的API
+    一切都是component 可维护性高， 重用
+    单向数据流
+  组件在传递属性为函数的时候需要接收参数不能直接加括号this.handle() 需要使用函数来包裹
+  如 (param) => { this.handle(param) }
 工作原理
   React创建一个虚拟DOM。当组件中的状态改变时，通过diff算法来标记虚拟DOM中的改变，
   第二步是调节(reconciliation)，会用diff的结果来更新真实DOM
@@ -413,6 +462,7 @@
     withRouter 高阶组件通过context来给没有经过Route渲染的组件提供 history， match， location
 
   - 性能优化
+    - render里面尽量减少新建变量和bind函数
     - 使用 production 版本的react.js
     - 使用key来帮助React识别列表中所有子组件的最小变化。
     - 在传递属性的时候，函数在组件的构造函数中使用bind绑定this
@@ -501,6 +551,7 @@
   - 类组件和函数组件
     类组件有更多额外的功能，如组件自身状态和生命周期函数等，也能使组件访问store并维持状态
     当组件仅仅是接受的props，并将组件自身渲染到页面，该组件就是一个无状态组件，这时可以使用函数来创建这样的组件
+  - 在 super() 被调用之前，子类是不能使用 this 的，在 ES2015 中，子类必须在 constructor 中调用 super()。传递 props 给    super() 的原因则是便于(在子类中)能在 constructor 访问 this.props。
   - react 新特性
     - hooks
     就是在 react 函数组件中，也可以使用类组件（classes components）的 state 和 组件生命周期，而不需要在 mixin、 函数组件、HOC组件和 render props 之间来回切换，使得函数组件的功能更加实在，更加方便我们在业务中实现业务逻辑代码的分离和组件的复用。
@@ -543,23 +594,21 @@
       2.把部分依赖转移到CDN上，避免每次编译过程都由Webpack处理
       3.对一些组件库采用按需加载，避免无用的代码
       从而能做到诸如去掉无效代码、去掉日志输出代码、缩短变量名等优化
-  https传输过程加密
-    一般意义上的https，就是服务器有一个证书。主要目的是保证服务器就是他声称的服务器，这个跟第一点一样；服务端和客户端之间的所有通讯，都是加密的。
-    客户端通过验证，证书的合法
-  mysql 和MongoDB的区别
-  mysql 数据表
-  MongoDB 集合
+  - mysql 和MongoDB的区别
+  - mysql 数据表
+  - MongoDB 集合
     非关系型数据库(nosql ),属于文档型数据库。先解释一下文档的数据库，即可以存放xml、json、bson类型系那个的数据。这些数据具备自述性（self-describing），呈现分层的树状数据结构。数据结构由键值(key=>value)对组成。
-  typescript 和 js对比
-  深度优先
+  - typescript 和 js对比
+  - 深度优先
     https://www.cnblogs.com/wuguanglin/p/DPSandBPS.html
-  服务器响应请求返回的数据
-  缓存
-  DNS
+  - 服务器响应请求返回的数据
+  - 缓存
+  - DNS
     域名系统最为域名和IP的地址的分布式数据库
-  如何在传递props的时候不影响组件外
+    在通过域名来解析IP的时候，通过迭代的方式来获取IP 顶级域名 根域名
+  - 如何在传递props的时候不影响组件外
     constructor中 深拷贝一份数据，然后赋值给state
-- 类型转换 [] 和 {}
+  - 类型转换 [] 和 {}
   由于空数组和空对象都是Object类型，因此用if（）判断的时候，都为true
   在使用==会进行类型转换
   [] == false 为true 因为 [] 最后转化为0 false 也为0
@@ -568,3 +617,26 @@
   console.log(Number({})); //NaN
   （1）console.log([]==false);  //true，因为[]转化为0，false转化为0，因此为true
   （2）console.log({}==fasle); //false，因为{}转化为NaN，因此为false`
+  - Set() Map()
+    Set 类似于数组，但是值是唯一的
+      两个NaN是相等。两个对象总是不相等的
+    Map 与 Object 差不多但是Map 的key可以是任何值
+  - 状态码
+    200 OK客户端请求成功
+    304 上次缓存的文件未被修改，
+    400 Bad Request 客户端请求语法错误
+    401 请求未经授权
+    403 服务器受到接受请求，但是拒绝提供服务
+    404 请求资源不存在
+    500 服务器发生不可预期的错误
+    503 服务器不能处理请求，一段时间恢复
+  - 二叉树遍历，前序，中序，后序， 知道其中两个，转另外一个
+  - 由Iterator来实现的一些API
+    具有 next() 方法
+    伪数组和数组，字符串的遍历都是由Iterator来是实现的
+    解构
+    数组 的一些遍历方法
+    生成器中的 yield
+    扩展运算符
+    for of
+    Set Map
