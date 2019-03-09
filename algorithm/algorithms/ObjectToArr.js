@@ -6,8 +6,9 @@ var objects = {
   test: 'test',
   length: '4',
 }
-
+// arguments转数组其实就是对象转数组、
 let result = Array.prototype.slice.call(objects);
+let result1 = [].slice.call(objects);
 console.log(result.test); // 不存在
 
 let arr = [1, 2, 3, 4, 5, 1, 3, 3, 5];

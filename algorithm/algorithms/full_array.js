@@ -23,7 +23,7 @@ function swap(arr, i, j) { // 交换数组的两个值
 function permutation(arr, len, index) {
   if(index == len){ // 结束
     num++;
-    let arr2 = arr.slice(0,4); 
+    let arr2 = arr.slice(0,len); 
     arr1.push(arr2)
     return;
   }
@@ -38,4 +38,23 @@ function permutation(arr, len, index) {
 }
 
 permutation(arr, len, 0)
-console.log(arr1)
+// console.log(arr1)
+
+function permutation1(arr, len, index) {
+  let result = [];
+  function main(arr, len, index) {
+    if (len === index) {
+      let newArr = arr.slice();
+      result.push(newArr);
+    } else {
+      for (let i = index; i < len; i++) {
+        swap(arr, index, i);
+        main(arr, len, index+1);
+        swap(arr, index, i);
+      }
+    }
+  }
+  main(arr, len,index);
+  return result;
+}
+console.log(permutation1([1, 2, 3], 3, 0))

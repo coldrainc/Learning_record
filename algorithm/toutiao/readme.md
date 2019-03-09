@@ -46,8 +46,22 @@
 6 进程线程
   进程是资源分配的最小单位， 有自己独立的地址空间， 由于是对立不会影响其他的进程
   线程是程序执行的最小单位， 线程间共享地址空间， 同一进程中的线程会影响其他线程
+    共享资源：堆，全局变量，静态变量，文件等公共资源
+    不共享：栈，寄存器
 7 排序算法稳定性
   希尔排序， 快速排序，选择排序， 堆排序都不稳定
   其他的稳定
 8 回文解码
   palindrome.js
+9 promise、setTimeout、async/await的执行顺序
+  promise里面的代码属于同步的代码，异步性体现在.then .catch 处
+  async await  await右边的代码会先执行，然后在await 处等待跳出async函数
+  promise.Trick()>promise的回调>setTimeout>setImmediate
+  promise为微任务，进入任务队列 执行完同步代码后，根据队列中异步代码先进的代码先执行
+  setTimeout为宏任务 进入响应的队列 最后执行
+10 eventEmitter
+11 arguments
+  arguments其实是一个对象，它与数组一样有索引以及length的属性。但是却不能使用数组的方法。
+  但是在实际开发中，我们使用arguments可以很方便的获取到所有的实参，并且也需要对其使用是写数组的方法。
+  Array.prototype.slice.call(arguments);
+  [].slice.call(arguments);
