@@ -34,7 +34,7 @@ let C = {
 // console.log(JSON.stringify(C)); //{"a":1,"b":"2"}
 
 console.log(100+"100"); // 100100
-console.log(100+undefined); // NAN
+console.log(100+undefined); // NAN undefined = NAN
 console.log(100+true) // 101
 console.log(100+false) // 100
 console.log(100+null) // 100
