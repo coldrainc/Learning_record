@@ -65,3 +65,5 @@
   但是在实际开发中，我们使用arguments可以很方便的获取到所有的实参，并且也需要对其使用是写数组的方法。
   Array.prototype.slice.call(arguments);
   [].slice.call(arguments);
+12 浏览器缓存机制
+  通过cache-control 来控制缓存
