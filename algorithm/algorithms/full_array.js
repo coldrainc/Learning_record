@@ -40,21 +40,21 @@ function permutation(arr, len, index) {
 permutation(arr, len, 0)
 // console.log(arr1)
 
-function permutation1(arr, len, index) {
+function permutation1(arr, index) {
   let result = [];
-  function main(arr, len, index) {
-    if (len === index) {
+  function main(arr, index) {
+    if (arr.length === index) {
       let newArr = arr.slice();
       result.push(newArr);
     } else {
-      for (let i = index; i < len; i++) {
+      for (let i = index; i < arr.length; i++) {
         swap(arr, index, i);
-        main(arr, len, index+1);
+        main(arr, index + 1);
         swap(arr, index, i);
       }
     }
   }
-  main(arr, len,index);
+  main(arr,index);
   return result;
 }
 console.log(permutation1([1, 2, 3], 3, 0))

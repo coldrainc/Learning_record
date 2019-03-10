@@ -28,7 +28,24 @@ let C = {
   b: '2'
 }
 
-console.log(JSON.stringify(A) === JSON.stringify(B)); // true
-console.log(JSON.stringify(A) === JSON.stringify(C)); // false
-console.log(JSON.stringify(B)); // {"a":1,"b":2}
-console.log(JSON.stringify(C)); //{"a":1,"b":"2"}
+// console.log(JSON.stringify(A) === JSON.stringify(B)); // true
+// console.log(JSON.stringify(A) === JSON.stringify(C)); // false
+// console.log(JSON.stringify(B)); // {"a":1,"b":2}
+// console.log(JSON.stringify(C)); //{"a":1,"b":"2"}
+
+console.log(100+"100"); // 100100
+console.log(100+undefined); // NAN
+console.log(100+true) // 101
+console.log(100+false) // 100
+console.log(100+null) // 100
+
+let obj = {};
+let obj1 = Object.create(null); // 这就是直接创建一个空对象
+let obj2 = Object.create({});
+let obj3 = {};
+obj3.__proto__ = undefined;
+console.log(Object.toString(obj)) // function 
+console.log(Object.toString(obj1)) // functionn
+// obj obj1 都是一个空对象 
+console.log(Object.toString(obj2))
+console.log(Object.toString(obj3))
