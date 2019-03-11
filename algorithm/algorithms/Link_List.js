@@ -56,19 +56,42 @@ function Link_list() {
     return head;
   }
 }
-var link = new Link_list();
-function reverse(link) {
-  let current = link.head;
+
+function reverse(head) {
+  let current = head;
   let stack = [], value;
   let newNode = new Link_list();
   while (current) {
     stack.push(current.value);
     current = current.next;
   }
+
   while (stack.length > 0) {
     value = stack.pop();
     newNode.append(value);
   }
   return newNode;
 }
-reverse(link);
+function findToTail(head, n) {
+  let current = head;
+  let result = head;
+  for (let i = 0; i < n; i++) {
+    current = current.next;
+  }
+  while (current) {
+    current = current.next;
+    result = result.next
+  }
+  return result.value;
+}
+var link = new Link_list();
+link.append(1);
+link.append(2);
+link.append(3);
+let head = link.getHead();
+
+let reverseValue = reverse(head); 
+let findTailValue = findToTail(head, 3);
+
+console.log(reverseValue.getHead());
+console.log(findTailValue);

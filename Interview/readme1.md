@@ -343,7 +343,6 @@ border-right: 50px solid transparent;
 			3.使用XMLHTTPRequest对像，但会精细控制预加载过程
 
 
-
 	懒加载（lazyload）：客户端优化，减少请求数和延迟请求数
 		提升用户体验，
 		减少无效资源的加载
@@ -458,10 +457,7 @@ node面试
 
 	中间件是怎么跑起来的：https://juejin.im/post/591c8b4544d904006c90a2cb
 
-							
-
-
-								vue面试
+vue面试
 一、介绍下MVVM(数据的双向绑定）
 	M: model数据模型
 	V: view 界面
@@ -527,9 +523,9 @@ mvc和mvvm其实区别并不大。都是一种设计思想。主要就是mvc中C
 
 	js实现模块化规范
 		    1.AMD 浏览器  requirejs  模块被异步加载，模块加载不影响后面语句的运行 默认使用baseURL+ paths的路经解析方式
-		    2.CommonJS  nodejs  
+		    2.CommonJS  nodejs
 		    3.ES6的import/export
-		    4.CMD 浏览器端 
+		    4.CMD 浏览器端
 
 	解决的问题：1.命名冲突 2.文件依赖 3.模块的复用 4.统一规范和开发方式
 
