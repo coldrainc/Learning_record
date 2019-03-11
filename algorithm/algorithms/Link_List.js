@@ -57,7 +57,7 @@ function Link_list() {
   }
 }
 
-function reverse(head) {
+function reverse(head) { // 翻转链表
   let current = head;
   let stack = [], value;
   let newNode = new Link_list();
@@ -72,7 +72,7 @@ function reverse(head) {
   }
   return newNode;
 }
-function findToTail(head, n) {
+function findToTail(head, n) { // 查找倒数第几个数使用两个，一个先过去
   let current = head;
   let result = head;
   for (let i = 0; i < n; i++) {
@@ -83,6 +83,9 @@ function findToTail(head, n) {
     result = result.next
   }
   return result.value;
+}
+function findMid(head) { // 查找中间节点
+
 }
 var link = new Link_list();
 link.append(1);

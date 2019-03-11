@@ -316,16 +316,6 @@
     变量作用域两种：全局变量、局部变量。js中函数内部可以读取全局变量，函数外部不能读取函数内部的局部变量 这是就应该到闭包来获取函数内部的值
 
   - 使得对象的属性无法改变
-  - cookies localStore 和 sessionStore， session
-    cookies: 由服务器生成 在发送响应的时候跟随在响应头部传给客户端 默认是关闭浏览器后失效， 可以设置失效时间
-      用来保存用户信息，用来给服务器辨别身份，只能保存4kb的数据
-      编码方式 encodeURIComponent
-    localStore:
-      用来本地保存数据， 可以永久保存数据， 可以保存5M的数据。
-    sessionStore:
-      跟localStore差不多也是用来保存数据的，但是只是将数据在一次会话中保存。session结束后将会清除sessionStore中的数据。
-    session:
-      服务端用于记录用户状态的用户标记具体用户的的机制，在服务端保存的用来跟踪用户状态的数据结构。在浏览器关闭后这次session就消失， 数据保存在服务器中的文件或者数据库中
   - null等于null吗 undefined等于undefined吗
   - symbol 的作用
     有象征性的独一无二的 作为标签
@@ -379,6 +369,9 @@
     - header footer H1-H6 strong nav aside section
     - 有利于团队的开发和维护，方便其他设备解析
     - 有利于爬虫的爬取
+    - 有利于SEO
+    - 没有css的情况下也可以较好的呈现内容
+    - 用户体验
 - 浏览器
   - TCP UDP
     TCP注重数据安全性，UDP注重数据传输快
@@ -405,6 +398,21 @@
       响应头
         cache-control， connection， set-cookies， content-type， content-，last-modified，max-age
         ，server
+    - cookies localStore 和 sessionStore， session
+      用户登录成功后，会在服务器存一个session，同时发送给客户端一个cookie 包含session_id
+      cookies: 由服务器生成 在发送响应的时候跟随在响应头部传给客户端 默认是关闭浏览器后失效， 可以设置失效时间
+        用来保存用户信息，用来给服务器辨别身份，只能保存4kb的数据
+        保存在客户端
+        编码方式 encodeURIComponent
+      localStore:
+        用来本地保存数据， 可以永久保存数据， 可以保存5M的数据。
+      sessionStore:
+        跟localStore差不多也是用来保存数据的，但是只是将数据在一次会话中保存。session结束后将会清除sessionStore中的数据。
+      session:
+        服务端用于记录用户状态的用户标记具体用户的的机制，在服务端保存的用来跟踪用户状态的数据结构。在浏览器关闭后这次session就消失， 数据保存在服务器中的文件或者数据库中
+      token:
+        Token是在客户端频繁向服务端请求数据，服务端频繁的去数据库查询用户名和密码并进行对比，判断用户名和密码正确与否，并作出相应提示，在这样的背景下，Token便应运而生。
+        Token的目的是为了减轻服务器的压力，减少频繁的查询数据库，使服务器更加健壮。
 - 七层协议四层协议
   - 应用层 http ftpt6 最高层 负责协调各应用程序的工作。直接向用户提供服务。
   - 展示层：对来自应用层数据进行解释，处理用户信息的表示问题，编码，数据格式转换问题等
@@ -478,3 +486,5 @@
   - meta
     Meta 元素中的信息可以描述 HTML 文档。
     Meta 元素中的信息可以描述文档的关键词。
+  - 链表查找中间节点 采用重两边开始然后一直往中间移动
+  - websocket
