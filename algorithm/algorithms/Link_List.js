@@ -85,7 +85,12 @@ function findToTail(head, n) { // 查找倒数第几个数使用两个，一个�
   return result.value;
 }
 function findMid(head) { // 查找中间节点
-
+  let fast = head, slow = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow.value
 }
 var link = new Link_list();
 link.append(1);
@@ -95,6 +100,7 @@ let head = link.getHead();
 
 let reverseValue = reverse(head); 
 let findTailValue = findToTail(head, 3);
-
+let findMidValue = findMid(head);
 console.log(reverseValue.getHead());
 console.log(findTailValue);
+console.log(findMidValue);
