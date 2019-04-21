@@ -126,7 +126,7 @@
     element1, element2 选择多个
     element1 element2  后代选择器
     element1>element2 子元素选择器
-    element1+element2 兄弟选择器
+    element1+element2 兄弟选择器 选择相邻的兄弟元素
     [attribute] [target]选择所有带有该属性的元素
     [attribute=value] [target=_blank] 选择所有属性target为_blank的元素
     [attribute~=value] 选择所有包含value的元素
