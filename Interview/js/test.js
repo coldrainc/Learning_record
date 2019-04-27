@@ -15,5 +15,6 @@ var a = 5;
 (function() {
     var a = b = 3;
 })();
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
+console.log([] == ![]);

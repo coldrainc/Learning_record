@@ -1,3 +1,4 @@
+// reduce实现map
 Array.prototype.reduceImpMap = function (fn, thisArg) {
   let list = this;
   return (list) => {

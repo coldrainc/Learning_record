@@ -9,11 +9,11 @@
 # 个人信息
 
  - 陈雨寒/男/1997
- - 本科/江西财经大学/2020届
+ - 本科/江西财经大学/2020届/软件工程专业
  - Github：https://github.com/chen-kosile
  - 掘金：https://juejin.im/user/5b9c6f3ff265da0ac2565a84
  - Segmentfault：https://segmentfault.com/u/xiaoyu_5aed6d3891e86
- - 个人网站（搭建中）：https://www.azuremicrocode.com
+ <!-- - 个人网站（搭建中）：https://www.azuremicrocode.com -->
  - 期望职位：Web前端实习生，node实习生
 
 ---
@@ -34,6 +34,12 @@
 - 使用router来管理不同页面上的切换和对应路由的跳转。
 - 后端使用egg.js+typescript来实现，数据库使用的mysql，通过sequelize来操作数据库和对数据进行持久化，使用postman来测试后端接口
 
+# 实习经历
+## 2019.3 - 至今 杭州 网易 前端实习生
+
+- 机器学习平台部功能实现，react + dva + antd
+- 用户问卷小程序，负责微信小程序的迭代
+
 # 技能清单
 
 - 前端技术栈：javasScript，HTML，CSS，React，微信小程序，typescript，了解Vue
@@ -48,7 +54,5 @@
 
 - 喜欢研究编程和相关技术，同时跟大家分享技术，富有开源精神。有较好学习能力和解决问题的能。
 并且时刻关注新的技术和学习新的技术。
-- 参加过ACM（大学生程序设计竞赛）比赛，对算法有些了解。
-对一些经典的算法题都有了解。
 - 会使用Linux，平常自己在使用的时候也都是在命令行界面操作的。
-基础的linux的使用，了解常用的命令，并且自己非常热爱linux，配置过网络并且在linux服务器上部署项目。平常使用centos和Ubuntu，图形界面和字符界面都可以较好的使用。
+基础的linux的使用，了解常用的命令，并且自己非常热爱linux，配置过网络并且在linux服务器上部署项目。平常使用centos和Ubuntu。

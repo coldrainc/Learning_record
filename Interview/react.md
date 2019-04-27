@@ -97,6 +97,7 @@
     不能保证同步执行 是性能优化
     调用setState的时候并不会立马修改state，而是把需要修改的状态放在一个队列中， React会优化真正的执行机制，并且出于性能原因会将多次setState合并成一次修改，
     setState会在最后批量执行
+    在更新组建时，将更新的state合并到原state是在componentWillUpdate之后，render之前，所以在componentWillUpdate之前设置的setState可以在render中拿到最新值。
 
   保证数据统一
 
