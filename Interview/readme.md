@@ -335,7 +335,11 @@
     箭头函数
     类class 语法糖
     super extends 语法糖
-  - 实现轮询 宏任务， 微任务
+  - 事件轮询 宏任务， 微任务
+    - 宏任务
+      script，setTimeout，setInterval，setImmediate， I/O, UI rendering;
+    - 微任务
+      Promise，process.nextTick, Object.observe, MutationObserve;
   - 箭头函数
   - this
   - 异步

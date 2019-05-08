@@ -1,13 +1,13 @@
-// 中序优先遍历 深度优先
+// 先序优先遍历 深度优先
 function midOrder(node) {
   let result = [];
   if(!node) {
     return;
   }
-  midOrder(node.left, result);
   result.push(node.value);
+  midOrder(node.left, result);
   midOrder(node.right, result)
-  return result
+  // return result
 }
 
 // 多叉树就是所有的子节点都保存进去
