@@ -41,7 +41,7 @@ export default class LiskList {
   }
   /**
    * @param {*} value
-   * @return {LinkList}
+   * @return {LinkListNode}
    */
   delete(value) {
     if (!this.head) return null;
@@ -64,5 +64,51 @@ export default class LiskList {
     if (this.compare(this.tail.value), value) {
       this.tail = currentNode;
     }
+    return deleteNode;
+  }
+  /**
+   * @param {Object} findParams
+   * @param {*} findParams.value
+   * @param {function} [findParams.callback]
+   * @return {LinkedListNode}
+   */
+  find({value = undefined, callback = undefined }) {
+    if (!this.head) {
+      return null;
+    }
+    let currentNode = this.head;
+    while (currentNode) {
+      if (callback && callback(currentNode.value)) {
+        return currentNode;
+      }
+
+      if (value !== undefined && this.compare(currentNode.value, value)) {
+        return currentNode;
+      }
+
+      currentNode = currentNode.next;
+    }
+  }
+
+  fromArray(values) {
+    values.forEach(value => this.append(value));
+    return this;
+  }
+
+  reverse() {
+    let currentNode = this.head;
+    let preNode = null;
+    let nextNode = null;
+
+    while(currentNode) {
+      nextNode = currentNode.next;
+      currentNode.next = preNode;
+      
+      preNode = currentNode;
+      currentNode = nextNode;
+    }
+    this.tail = this.head;
+    this.head = preNode;
+    return this;
   }
 }

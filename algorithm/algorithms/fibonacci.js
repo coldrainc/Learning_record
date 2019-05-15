@@ -1,3 +1,5 @@
+// 斐波那契数列 
+// 青蛙跳台阶问题
 var fibonacci = function(n) {
   sum++;
   return n < 2 ? n : fibonacci(n-1) + fibonacci(n-2)
