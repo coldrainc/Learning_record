@@ -30,11 +30,11 @@ let C = {
 // console.log(JSON.stringify(B)); // {"a":1,"b":2}
 // console.log(JSON.stringify(C)); //{"a":1,"b":"2"}
 
-console.log(100+"100"); // 100100
-console.log(100+undefined); // NAN undefined = NAN
-console.log(100+true) // 101
-console.log(100+false) // 100
-console.log(100+null) // 100
+// console.log(100+"100"); // 100100
+// console.log(100+undefined); // NAN undefined = NAN
+// console.log(100+true) // 101
+// console.log(100+false) // 100
+// console.log(100+null) // 100
 
 let obj = {};
 let obj1 = Object.create(null); // 这就是直接创建一个空对象
