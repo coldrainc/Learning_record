@@ -279,7 +279,7 @@
       A.then(B).then.(C)
     - async await 更像同步代码
       async函数返回的就是一个promise对象
-      await等待的是一个返回值 
+      await等待的是一个返回值
       如果它等到的不是一个 Promise 对象，那 await 表达式的运算结果就是它等到的东西。
       如果它等到的是一个 Promise 对象，await 就忙起来了，它会阻塞后面的代码，等着 Promise 对象 resolve，然后得到 resolve 的值，作为 await 表达式的运算结果。
       串行
@@ -444,6 +444,7 @@
     表结构不明确，且数据在不断变大
     非关系型数据库(nosql ),属于文档型数据库。先解释一下文档的数据库，即可以存放xml、json、bson类型系那个的数据。这些数据具备自述性（self-describing），呈现分层的树状数据结构。数据结构由键值(key=>value)对组成。
   - typescript 和 js对比
+    静态类型检测
   - 深度优先
     https://www.cnblogs.com/wuguanglin/p/DPSandBPS.html
   - 服务器响应请求返回的数据

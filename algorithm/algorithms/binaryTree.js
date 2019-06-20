@@ -7,7 +7,7 @@ function BinaryTree() {
   var root = null;
   this.insert = function(key){
     var node = new Node(key);
-    if (!root){
+    if (!root) {
       root = node
     } else {
       insertNode(root, node);

@@ -5,7 +5,6 @@
 	<title>动态绘制点</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel = "stylesheet" type="text/css" href="../css/common.css" />
-	<script type="script" src="../utils/webgl-helper.js"></script>
 </head>
 <body>
 	<canvas id="canvas"></canvas>
@@ -40,8 +39,8 @@
 			gl_FragColor = color;
 		}
 	</script>
+	<script src="../utils/webgl-helper.js"></script>
 	<script>
-		
 		//获取canvas
 		let canvas = getCanvas('#canvas');
 		//设置canvas尺寸为满屏

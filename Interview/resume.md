@@ -14,7 +14,7 @@
  - 掘金：https://juejin.im/user/5b9c6f3ff265da0ac2565a84
  - Segmentfault：https://segmentfault.com/u/xiaoyu_5aed6d3891e86
  <!-- - 个人网站（搭建中）：https://www.azuremicrocode.com -->
- - 期望职位：Web前端实习生，node实习生
+ - 期望职位：Web前端实习生
 
 ---
 ## 开源项目
@@ -45,7 +45,7 @@
 
 - 前端技术栈：javasScript，HTML，CSS，React，微信小程序，typescript，了解Vue
 - 前端工具：Webpack，Stylus，less
-- 后端有关：java，python，node，koa，hapi，egg.js
+- 后端有关：java，python，node，koa，egg.js
 - 数据库有关：MongoDB，MySQL，sequelize，redis
 - 版本管理： Git
 - 操作系统：Linux
