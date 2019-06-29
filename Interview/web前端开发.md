@@ -1,11 +1,10 @@
 # 联系方式
 
 - 手机：18279438873
-- Email：chenyh182@gmail.com
+- Email：1944614333@qq.com
 - QQ/微信号：1944614333/18279438873
 
 ---
-
 # 个人信息
 
  - 陈雨寒/男/1997
@@ -14,10 +13,20 @@
  - 掘金：https://juejin.im/user/5b9c6f3ff265da0ac2565a84
  - Segmentfault：https://segmentfault.com/u/xiaoyu_5aed6d3891e86
  <!-- - 个人网站（搭建中）：https://www.azuremicrocode.com -->
- - 期望职位：Web前端实习生
+ - 期望职位：Web前端开发
+
+# 实习经历
+## 2019.3 - 至今 杭州 网易 前端实习生
+
+<!-- - 机器学习平台部分功能实现，react + dva + antd -->
+- 用户问卷小程序，对微信小程序的迭代
+- 内部项目系统， 项目部分功能的实现 所用技术 react + umi + dva + antd
+  - 项目中使用到前后端分离，从项目开始设计一直到开发都在跟进度。
+    在通过学习，更好的设计好接口。在后面开发模块明显更加快速和完善，模块化更加细化
+    锻炼了自己与同事的沟通能力与UI和后端同事交流，协同开发
 
 ---
-## 开源项目
+# 开源项目
 ### 小程序仿今日头条
 - 技术栈：小程序，腾讯云，MongoDB，vant-weapp
 - 项目地址GitHub：https://github.com/chen-kosile/toutiao
@@ -34,13 +43,6 @@
 - 使用router来管理不同页面上的切换和对应路由的跳转。
 - 后端使用egg.js+typescript来实现，数据库使用的mysql，通过sequelize来操作数据库和对数据进行持久化，使用postman来测试后端接口
 
-# 实习经历
-## 2019.3 - 至今 杭州 网易 前端实习生
-
-- 机器学习平台部功能实现，react + dva + antd
-- 用户问卷小程序，对微信小程序的迭代
-- 内部项目系统， 项目部分功能的实现 所用技术 react + umi + dva + antd
-
 # 技能清单
 
 - 前端技术栈：javasScript，HTML，CSS，React，微信小程序，typescript，了解Vue
@@ -56,4 +58,4 @@
 - 喜欢研究编程和相关技术，同时跟大家分享技术，富有开源精神。有较好学习能力和解决问题的能。
 并且时刻关注新的技术和学习新的技术。
 - 会使用Linux，平常自己在使用的时候也都是在命令行界面操作的。
-基础的linux的使用，了解常用的命令，并且自己非常热爱linux，配置过网络并且在linux服务器上部署项目。平常使用centos和Ubuntu。
+基础的linux的使用，了解常用的命令，并且自己非常热爱linux，配置过网络并且在linux服务器上部署项目。
