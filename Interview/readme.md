@@ -511,3 +511,7 @@
     react和vue区别
       react中一切都是js，将html可以用js表达 jsx
       vue则是在经典的web技术上扩展 模板语法
+  
+  缓存策略， 单向数据绑定和双向数据绑定，babel编译原理，redux, react声明周期， loader
+  高度是宽度的一半
+  flex子元素含有的属性

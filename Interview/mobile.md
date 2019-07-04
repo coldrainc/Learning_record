@@ -3,7 +3,7 @@
 - rem适配html跟元素字体大小，
   使用media媒体查询来设置html font-size
   @media (mid-device-width: 375px) and (max-device-width: 667px): (-webkit-min-device-pixel-ratio: 2) {
-    html{ 
+    html{
       font-size: 37.5px;
     }
   }
