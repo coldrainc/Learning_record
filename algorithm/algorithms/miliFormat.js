@@ -3,7 +3,7 @@ let num = 123456
 // num.toString().replace(/(?=(?!^)(\d{3})+$)/g, ',');
 // 没有小数的实现
 let miliFormat = (number) => {
-  return number && number.toString().replace(/(?=(?!^)(\d{3})+$)/g, ',');
+  return number && number.toString().replace(/(?=(?!^)(\d{3})+$)/g, ','); // 零宽断言
 }
 
 // 带有小数的实现

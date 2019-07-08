@@ -67,7 +67,7 @@
   relative(相对定位): 不脱离文档流， 相对自身进行定位
   absolute(绝对定位): 参考最近的一个定位
   fixed(固定定位): 相对浏览器的窗口进行定位
-  sticky 粘性布局 兼容性太差了 relative和absolute的结合 在设置的值内是relative 超过设置的值将会使用fixed定位
+  sticky 粘性定位 兼容性太差了 relative和absolute的结合 在设置的值内是relative 超过设置的值将会使用fixed定位
 - css3新特性
   RGBA和透明度
   backgound-image backgound-origin(content-box/paddingbox/border-box)

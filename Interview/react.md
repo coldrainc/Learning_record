@@ -129,6 +129,7 @@
 
   - refs
     Refs 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加ref属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回
+    正确用法 <component ref={(input) => this.input = input} /> 
 
   - keys
     Keys 是 React 用于追踪哪些列表中元素被修改、被添加或者被移除的辅助标识。

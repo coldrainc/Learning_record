@@ -12,7 +12,7 @@ function bubbleSort(arr) {
       }
     }
   }
-  console.log(arr);
+  return arr
 }
 
-bubbleSort(arr);
+console.log(bubbleSort(arr));

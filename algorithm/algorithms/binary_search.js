@@ -39,3 +39,18 @@ function binary_search(list, item, low, high) {
 console.log(3/2);
 
 binary_search1(My_list, 3, 0, length-1);
+
+
+function bsearch(list, item, low, high) {
+  if (low > high) {
+    return false;
+  }
+  let mid = parseInt((low+high)/2);
+  if (list[mid] === item) return mid;
+
+  if (list[mid] > item) {
+    bsearch(list, item, low, mid-1);
+  } else if (list[mid] < item) {
+    bsearch(list, item, mid+1, high);
+  }
+}
