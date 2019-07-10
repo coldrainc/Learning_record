@@ -1044,7 +1044,7 @@ class Promise {
     } catch (err) {
       reject(err);
     }
-  } 
+  }
   then (onFullFilled,onRejected) {
     if (this.status == 'resolved') {
       onFullFilled(this.value)
@@ -1060,7 +1060,7 @@ class Promise {
           onRejected(this.reason);
       })
   }
-   
+
   }
 }
 
