@@ -1,56 +1,44 @@
-class EventEmitter { // 发布订阅者模式， 观察者模式
+class EventEmitter {
   constructor() {
-    super();// 使用super才能使用this
-    this.messageBox = {};
-    this.onceEvents = {};
+    this._events = {}
+  }
+  on(event, callback) {
+    if (!event || !callback) {
+      return false
+    }
+    let callbacks = this._events[event] || [];
+    callbacks.push(callback);
+    this._events[event] = callbacks;
+    return this;
   }
 
-  on(eventName, func) {
-    if (!eventName || !func) {
-      return false;
+  emit(event, ...args) {
+    if (!event) {
+      return;
     }
-    const callbacks = this.messageBox[eventName] || [];
-    callbacks.push(func);
-    this.messageBox[eventName] = callbacks;
+    let callbacks = this._events[event];
+    callbacks.forEach(item => {
+      item(...args);
+    })
+    return this;
   }
-
-  emit(eventName, ...args) {
-    if (!eventName) {
-      return false;
+  once(event, callback) {
+    let wrapFunc = (...args) => {
+      callback.apply(this, args);
+      this.off(event, wrapFunc);
     }
-    const callbacks = this.messageBox[eventName];
-    const onceEvents = this.onceEvents[eventName];
-    if (callbacks > 0) {
-      callbacks.forEach(callback => {
-        callback(...args);
-      });
-    }
-    if (onceEvents > 0) {
-      callbacks.forEach(callback => {
-        callback(...args);
-      })
-    }
-    delete this.onceEvents[eventName];
+    this.on(event, wrapFunc)
+    return this;
   }
-
-  off(eventName, func) {
-    if (!eventName || !func) return false;
-    const callbacks = this.messageBox[eventName];
-    const onceEvents = this.onceEvents[eventName];
-    let indexonce = onceEvents.indexOf(func);
-    let index = callbacks.indexOf(func);
+  off(event, callback) {
+    if (!event || !call) {
+      return;
+    }
+    let callbacks = this._events[event];
+    let index = callbacks.indexOf(callback);
     if (index !== -1) {
       callbacks.splice(index, 1);
     }
-    if (indexonce !== -1) {
-      onceEvents.splice(index, 1);
-    }
-  }
-
-  once(eventName, func) {
-    if (!eventName || !func) return false;
-    const callbacks = this.onceEvents[eventName] || [];
-    callbacks.push(func);
-    this.onceEvents[eventName] = callbacks;
+    this._events[event] = callbacks;
   }
 }

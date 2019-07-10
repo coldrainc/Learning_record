@@ -129,7 +129,7 @@
 
   - refs
     Refs 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加ref属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回
-    正确用法 <component ref={(input) => this.input = input} /> 
+    正确用法 <component ref={(input) => this.input = input} />
 
   - keys
     Keys 是 React 用于追踪哪些列表中元素被修改、被添加或者被移除的辅助标识。
@@ -186,8 +186,3 @@
   
 - create-react-app
   postCss 自动添加前缀
-- webpack
-  - plugin和loader
-    由于webpack 只能 打包commonjs的js文件，对于其他资源无法加载，所以需要loder
-    loader 主要用来的资源加载处理不同的文件， 作用于一种文件， 也是对webpack的扩展， 但是只是转化文件
-    plugin 直接作用于webpack， 是对webpack的一些扩展，相当给webpack添加功能

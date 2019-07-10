@@ -5,7 +5,7 @@ function selectSort(arr) {
   var tmp, index;
   for(let i = 0; i < arr.length; i++) {
     index = i;
-    for(let j = i + 1; j < arr.length; j++){
+    for(let j = i + 1; j < arr.length; j++){ // 找到最小的项，然后与第I项交换
       if(arr[j] < arr[index]) {
         index = j;
       }
