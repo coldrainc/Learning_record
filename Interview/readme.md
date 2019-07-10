@@ -1,7 +1,7 @@
 # 面试
 
 - 自我介绍
-    您好，我叫陈雨寒，今年22岁， 是江西财经大学软件工程专业2020届毕业的一名学生，我比较擅长前端的技术对后端技术也有些了解，比较熟悉js，html，css对react也比较熟悉，
+    您好，我叫陈雨寒，今年22岁， 是江西财经大学软件工程专业2020届毕业的一名本科生，自己有做过几个项目，自己喜欢学习有关于前端的技术，目前是在前端岗位上实习，用react开发项目。
     我做过小程序的项目和react项目
 - 有什么问题问我
   你们公司现在用的技术大概是什么
@@ -354,8 +354,8 @@
     __proto__对象具有的属性，js万物皆对象，所以会形成一条原型链到Object而Object.prototype.__proto__=null
     __proto__可以理解为构造器的原型
     __proto__指向prototype
-    https://www.cnblogs.com/wyaocn/p/5815761.html
-    https://www.cnblogs.com/shuiyi/p/5305435.html
+    <https://www.cnblogs.com/wyaocn/p/5815761.html/>
+    <https://www.cnblogs.com/shuiyi/p/5305435.html/>
   - 事件机制
     捕获阶段 处于目标阶段 冒泡阶段
     事件代理使用就是利用冒泡，事件发出者 e.target 父级元素 e.currentTarget 事件处于这里的时候会监听
@@ -405,7 +405,7 @@
     HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全
     http 80 端口
     https 443 端口
-    https://www.cnblogs.com/ranyonsue/p/5984001.html
+    <https://www.cnblogs.com/ranyonsue/p/5984001.html/>
     - http 头信息
       请求头
         cache-control，connection，cookies，Accept-，User-Agent，host
@@ -456,7 +456,7 @@
   - typescript 和 js对比
     静态类型检测
   - 深度优先
-    https://www.cnblogs.com/wuguanglin/p/DPSandBPS.html
+    <https://www.cnblogs.com/wuguanglin/p/DPSandBPS.html/>
   - 服务器响应请求返回的数据
   - 缓存 服务器端头信息中 cache-contro
     强缓存，200 当在检查浏览器中有缓存数据，直接使用缓存数据。
