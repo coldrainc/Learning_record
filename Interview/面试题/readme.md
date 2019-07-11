@@ -1,4 +1,6 @@
 # 面试
+- position
+- 实现三角形
 - udp/tcp区别，
 - instanceof和typeof区别
 - setTimeout定时问题
