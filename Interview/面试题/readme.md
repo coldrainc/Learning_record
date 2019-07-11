@@ -1,4 +1,7 @@
 # 面试
+- udp/tcp区别，
+- instanceof和typeof区别
+- setTimeout定时问题
 - 七层协议和五层协议<https://blog.csdn.net/qq_22238021/article/details/80279001/>
 - 写一个加法函数(sum)，使他可以同时支持sum(x,y)和sum(x)(y)两种调用方式。
   function sum() {
