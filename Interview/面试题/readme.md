@@ -1,14 +1,23 @@
 # 面试
-- position
-- 实现三角形
+- position static absolute relative fixed sticky
+- 实现三角形 设置宽高为0然后这是边框大小把其他三边设置为透明， 这样就是三角形
 - udp/tcp区别，
+  tcp 面向连接 有三次握手，数据传输更加安全当数据包丢失会进行一个回传，并且会对数据进行排序，udp不会
+  tcp对系统资源要求较多，udp较少
+  UDP传送数据的速度仅仅是受应用程序生成数据的速度、 计算机的能力和传输带宽的限制； 在接收端，UDP把每个消息段放在队列中，应用程序每次从队列中读一个消息段。
 - instanceof和typeof区别
 - setTimeout，setInterval定时问题 注意这里是使用setInterval可能会出现延迟问题，当里面执行的代码时间超过设置的时间就可能会出现延迟问题
   使用setTimeout，而不使用setInterval，经常使用setTimeout来模拟setInterval
   上面代码每隔2000毫秒，就跳出一个alert对话框。如果用户一直不点击“确定”，整个浏览器就处于“堵塞”状态，后面的执行就一直无法触发，将会累积起来。举例来   说，第一次跳出alert对话框后，用户过了6000毫秒才点击“确定”，那么第二次、第三次、第四次执行将累积起来，它们之间不会再有等待间隔。
-  使用requestAnimationFrame
+  使用requestAnimationFrame来解决setInterval的问题
 - 节流，防抖
+  
 - 七层协议和五层协议<https://blog.csdn.net/qq_22238021/article/details/80279001/>
+  物理层 将信息使用比特流进行传输
+  数据链路层 对数据进行处理封装成数据帧并传递和错误检测的层就是数据链路层。
+  网络层 负责选择最佳的数据传输路径，并确保是沿着最佳路径传输 数据包 ip协议所处的层
+  传输层 传输数据 TCP协议所在层
+  应用层 直接为应用程序提供服务 http ftp
 - 写一个加法函数(sum)，使他可以同时支持sum(x,y)和sum(x)(y)两种调用方式。
 ```
   function sum() {
