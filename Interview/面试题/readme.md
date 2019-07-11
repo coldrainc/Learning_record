@@ -1,4 +1,5 @@
 # 面试
+
 - position static absolute relative fixed sticky
 - 实现三角形 设置宽高为0然后这是边框大小把其他三边设置为透明， 这样就是三角形
 - udp/tcp区别，
@@ -22,8 +23,10 @@
   网络层 负责选择最佳的数据传输路径，并确保是沿着最佳路径传输 数据包 ip协议所处的层
   传输层 传输数据 TCP协议所在层
   应用层 直接为应用程序提供服务 http ftp
+
 - 写一个加法函数(sum)，使他可以同时支持sum(x,y)和sum(x)(y)两种调用方式。
-```
+
+``` js
   function sum() {
       let args = arguments;
       if (arguments.length === 2) {
@@ -35,9 +38,11 @@
       }
   }
  ```
+
 - 函数柯里化
 - 实现一个单链表， 具备插入、查找方法
-```
+
+``` js
 class Node {
     constructor() {
         this.next = null
@@ -77,8 +82,10 @@ class LinkList {
     }
 }
 ```
-- 使用JS实现一个repeat方法，
-```
+
+- 使用JS实现一个repeat方法
+
+``` js
   function repeat (func, times, wait) {
   // TODO
   }，
@@ -99,6 +106,7 @@ class LinkList {
   const repeatFunc = repeat((), 4, 3000);
   repeatFunc('helloworld');
  ```
+
 - 请为所有数组对象添加一个flatten()方法, 返回其扁平结构
   tip: 跳过Objects, null, undefined, Function, RegExp, ....
   // test1
@@ -106,7 +114,8 @@ class LinkList {
   // test2
   [['a','b'], [0,['a']], [false], null].flatten() =>
   ['a','b',0,'a',false]
- ```
+
+ ``` js
   Array.prototype.flatten = function() {
       let arr = this;
       function flat(arrs) {
@@ -123,8 +132,10 @@ class LinkList {
       return flat(arr);
   }
  ```
+
 - 下面的输出
-```
+
+``` js
   console.log('start');
   let intervalId;
   Promise.resolve()
@@ -147,8 +158,10 @@ class LinkList {
     console.log('timeout1');
   },0);
  ```
+
 - 判断一个请求是否是ajax
-```
+
+``` js
     String requestType = request.getHeader("X-Requested-With");
     if("XMLHttpRequest".equals(requestType)){
         System.out.println("AJAX请求..");
@@ -157,6 +170,7 @@ class LinkList {
         //此时requestType为null
     }
  ```
+
 - 请求头 和 响应头
 - 怎么设置cors
     Access-Control-Allow-Origin 该字段是必须的。它的值要么是请求时Origin字段的值，要么是一个*，表示接受任意域名的请求。
@@ -173,7 +187,8 @@ class LinkList {
 - 变量提升（Hoisting）由此可见函数提升要比变量提升的优先级要高一些，且不会被变量声明覆盖，但是会被变量赋值之后覆盖。
   函数作为一等公民，先被提升，变量声明后被提升，所以可能会发生被后面的变量赋值覆盖
   对象才能使用静态变量
-```
+
+``` js
   function Foo () {
       getName = function () {
           console.log(1)
@@ -202,8 +217,10 @@ class LinkList {
   new Foo().getName()
   new new Foo().getName()
   ```
+
 - 自己添加
-```
+
+``` js
 function Test() {
   var one = function() { // 无法被访问相当于私有方法  在外部不管怎么样都是无法被访问的， 除非使用闭包
     console.log(2)
@@ -226,7 +243,7 @@ var test = function() { // 进行变量提升
   console.log(6);
 }
 function test() { // 进行变量提升 但是函数作为一等公民， 先提升，函数作为变量提升不会被覆盖，但是在进行赋值的时候会被覆盖
-  console.log(7); 
+  console.log(7);
 }
 Test.test() // 输出3 后面的覆盖前面Test.test 静态方法的定义
 test() // 将会输出6 因为函数作为一等公民先进行提升 而且函数是整个进行提升不会被后提升的 test变量覆盖， 但是由于变量test的赋值 所以讲function test 覆盖
