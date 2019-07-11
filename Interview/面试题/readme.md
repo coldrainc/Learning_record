@@ -137,6 +137,7 @@ class LinkList {
         //此时requestType为null
     }
  ```
+- 请求头 和 响应头
 - 怎么设置cors
     Access-Control-Allow-Origin 该字段是必须的。它的值要么是请求时Origin字段的值，要么是一个*，表示接受任意域名的请求。
     Access-Control-Allow-Credentials: true 表示是否允许发送Cookie
