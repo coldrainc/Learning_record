@@ -4,6 +4,7 @@
 - setTimeout定时问题
 - 七层协议和五层协议<https://blog.csdn.net/qq_22238021/article/details/80279001/>
 - 写一个加法函数(sum)，使他可以同时支持sum(x,y)和sum(x)(y)两种调用方式。
+```
   function sum() {
       let args = arguments;
       if (arguments.length === 2) {
@@ -14,7 +15,9 @@
           }
       }
   }
+ ```
 - 实现一个单链表， 具备插入、查找方法
+```
 class Node {
     constructor() {
         this.next = null
@@ -53,7 +56,9 @@ class LinkList {
         return false;
     }
 }
+```
 - 使用JS实现一个repeat方法，
+```
   function repeat (func, times, wait) {
   // TODO
   }，
@@ -73,6 +78,7 @@ class LinkList {
   }
   const repeatFunc = repeat((), 4, 3000);
   repeatFunc('helloworld');
+ ```
 - 请为所有数组对象添加一个flatten()方法, 返回其扁平结构
   tip: 跳过Objects, null, undefined, Function, RegExp, ....
   // test1
@@ -80,6 +86,7 @@ class LinkList {
   // test2
   [['a','b'], [0,['a']], [false], null].flatten() =>
   ['a','b',0,'a',false]
+ ```
   Array.prototype.flatten = function() {
       let arr = this;
       function flat(arrs) {
@@ -95,7 +102,9 @@ class LinkList {
       }
       return flat(arr);
   }
+ ```
 - 下面的输出
+```
   console.log('start');
   let intervalId;
   Promise.resolve()
@@ -117,7 +126,9 @@ class LinkList {
     },3000);
     console.log('timeout1');
   },0);
+ ```
 - 判断一个请求是否是ajax
+```
     String requestType = request.getHeader("X-Requested-With");
     if("XMLHttpRequest".equals(requestType)){
         System.out.println("AJAX请求..");
@@ -125,6 +136,7 @@ class LinkList {
         System.out.println("非AJAX请求..");
         //此时requestType为null
     }
+ ```
 - 怎么设置cors
     Access-Control-Allow-Origin 该字段是必须的。它的值要么是请求时Origin字段的值，要么是一个*，表示接受任意域名的请求。
     Access-Control-Allow-Credentials: true 表示是否允许发送Cookie
@@ -139,6 +151,7 @@ class LinkList {
         application/json 这个 Content-Type 作为响应头大家肯定不陌生。实际上，现在越来越多的人把它作为请求头，用来告诉服务端消息主体是序列化后的 JSON 字符串。由于 JSON 规范的流行，除了低版本 IE 之外的各大浏览器都原生支持 JSON.stringify，服务端语言也都有处理 JSON 的函数，使用 JSON 不会遇上什么麻烦。
 - 由此可见函数提升要比变量提升的优先级要高一些，且不会被变量声明覆盖，但是会被变量赋值之后覆盖。
   函数作为一等公民，先被提升，变量声明后被提升，所以可能会发生被后面的变量赋值覆盖
+```
   function Foo () {
       getName = function () {
           console.log(1)
@@ -166,3 +179,4 @@ class LinkList {
   new Foo.getName()
   new Foo().getName()
   new new Foo().getName()
+  ```
