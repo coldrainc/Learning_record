@@ -3,7 +3,10 @@
 - 实现三角形
 - udp/tcp区别，
 - instanceof和typeof区别
-- setTimeout定时问题
+- setTimeout，setInterval定时问题 注意这里是使用setInterval可能会出现延迟问题，当里面执行的代码时间超过设置的时间就可能会出现延迟问题
+  使用setTimeout，而不使用setInterval，经常使用setTimeout来模拟setInterval
+  上面代码每隔2000毫秒，就跳出一个alert对话框。如果用户一直不点击“确定”，整个浏览器就处于“堵塞”状态，后面的执行就一直无法触发，将会累积起来。举例来   说，第一次跳出alert对话框后，用户过了6000毫秒才点击“确定”，那么第二次、第三次、第四次执行将累积起来，它们之间不会再有等待间隔。
+  使用requestAnimationFrame
 - 节流，防抖
 - 七层协议和五层协议<https://blog.csdn.net/qq_22238021/article/details/80279001/>
 - 写一个加法函数(sum)，使他可以同时支持sum(x,y)和sum(x)(y)两种调用方式。
