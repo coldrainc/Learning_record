@@ -1,5 +1,7 @@
 # 面试
-
+- webpack
+- babel
+  babel是将es6代码转译为es5， 将代码解析成AST（抽象语法树），旧的AST转换成新的AST就是es5的语法树，然后以AST为基础生成新的代码
 - position static absolute relative fixed sticky
 - 实现三角形 设置宽高为0然后这是边框大小把其他三边设置为透明， 这样就是三角形
 - udp/tcp区别，
