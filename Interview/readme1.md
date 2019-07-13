@@ -25,7 +25,7 @@ caleY)
 三、4.transition和animation的区别
 	Animation和transition大部分属性是相同的，他们都是随时间改变元素的属性值，他们的主要区别是transition需要触发一个事件才能改变属性，
 	而animation不需要触发任何事件的情况下才会随时间改变属性值，并且transition为2帧，从from .... to，而animation可以一帧一帧的。
-	
+
 	transition 规定动画的名字  规定完成过渡效果需要多少秒或毫秒  规定速度效果  定义过渡效果何时开始
 	animation  指定要绑定到选择器的关键帧的名称
 

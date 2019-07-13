@@ -193,7 +193,7 @@ class LinkList {
       getName = function () {
           console.log(1)
       }
-      console.log('this is' + this)
+      console.log('this is' + this)// 这里this将会调用Object.prototype.toString(this)方法所以为this is [object Object]
       return this
   }
 
@@ -209,13 +209,13 @@ class LinkList {
   function getName () {
       console.log(5)
   } // 请写出一下的输出结果
-  Foo.getName()
-  getName()
-  Foo().getName()
-  getName()
-  new Foo.getName()
-  new Foo().getName()
-  new new Foo().getName()
+  Foo.getName() // 2
+  getName() // 4
+  Foo().getName() //报错 4
+  getName() // 4
+  new Foo.getName() // 2
+  new Foo().getName() // 3
+  new new Foo().getName() // 3
   ```
 
 - 自己添加
