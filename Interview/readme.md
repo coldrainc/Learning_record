@@ -581,6 +581,8 @@
   自己做过的东西
     小程序
       组件，就是平常的 view视图容器 input picker从底部弹起的滚动选择器 select radio text checkbox
+      小程序是通过后台获取后台的数据所以不需要解决跨域的问题,直接通过request请求就行，一般跨域问题的话通过在后台设置Access-Contral-Allow-Origin: * 获取某一个域名
+      生命周期 onload onshow onready onhide onlaunch onpulldownrefresh stoppulldownfresh
     react项目
       主要将路由的问
     公司的小程序
