@@ -211,7 +211,7 @@ border-right: 50px solid transparent;
 			sayHi()  //Hi, Tom
 		函数sayHi()的执行环境为全局环境，所以它的变量对象为window。当函数执行到name时，先查找局部环境，找到则换回，否则顺着作用域查找，在全局环境中，
 		找到name返回，这一查找变量的有序过程的依据就是作用域。
-	
+
 	    · 作用域链是保证执行环境有权访问的所有变量和函数的有序访问
 
    原型链：函数的原型链对象constructor默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针_proto_,
@@ -308,7 +308,7 @@ border-right: 50px solid transparent;
 	深拷贝和浅拷贝的主要区别是：在内存中的存储类型不同
 		浅拷贝：重新在堆栈中创建内存，拷贝前后对象的基本类型互不影响。只拷贝一层，不能对对象进行子对象进行拷贝
 		深拷贝：对对象中的子对象进行递归拷贝，拷贝前后两个对象互不影响
-	
+
 十、跨域
 	同源策略（协议+端口号+域名要相同）
 	1、jsonp跨域(只能解决get）
@@ -640,7 +640,7 @@ this.setState({ data:data });
 	4.去除不必要的插件
 
 如何优化webpack构建的性能
-	一、减少代码体积 
+	一、减少代码体积
 			 1.使用CommonsChunksPlugin 提取多个chunk之间的通用模块，减少总体代码体积
 			 2.把部分依赖转移到CDN上，避免每次编译过程都由Webpack处理
 			 3.对一些组件库采用按需加载，避免无用的代码
@@ -1013,7 +1013,7 @@ function getData(url) {
       }
       return newObject
     }
- 
+
 六、实现一个简单的Promise https://juejin.im/post/5b2f02cd5188252b937548ab
 class Promise {
   constructor (executor) {   // executor里面有两个参数，一个叫resolve（成功），一个叫reject（失败）。

@@ -13,8 +13,8 @@
   UDP传送数据的速度仅仅是受应用程序生成数据的速度、 计算机的能力和传输带宽的限制； 在接收端，UDP把每个消息段放在队列中，应用程序每次从队列中读一个消息段。
 - instanceof和typeof区别
   typeof 判断数据类型，但是只能判断出5种初始类型null会判断为object，然后就object和function
-  instanceof 比较 两个对象的烈性
-  可以通过Object.prototype.toString()判断类型返回的是具体类型[object Object] [object String]这种类型
+  instanceof 比较 两个对象的类型
+  可以通过Object.prototype.toString.call()判断类型返回的是具体类型[object Object] [object String]这种类型
 - setTimeout，setInterval定时问题 注意这里是使用setInterval可能会出现延迟问题，当里面执行的代码时间超过设置的时间就可能会出现延迟问题
   使用setTimeout，而不使用setInterval，经常使用setTimeout来模拟setInterval
   上面代码每隔2000毫秒，就跳出一个alert对话框。如果用户一直不点击“确定”，整个浏览器就处于“堵塞”状态，后面的执行就一直无法触发，将会累积起来。举例来   说，第一次跳出alert对话框后，用户过了6000毫秒才点击“确定”，那么第二次、第三次、第四次执行将累积起来，它们之间不会再有等待间隔。

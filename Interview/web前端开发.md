@@ -55,8 +55,8 @@
 
 - 前端技术栈：javasScript，HTML，CSS，React，微信小程序，typescript，了解Vue
 - 前端工具：Webpack，Stylus，less
-- 后端有关：java，python，node，koa，egg.js
-- 数据库有关：MongoDB，MySQL，sequelize，redis
+- 后端有关：java，python，node，egg.js
+- 数据库有关：MongoDB，MySQL，sequelize
 - 版本管理： Git
 - 操作系统：Linux
 - 开发测试工具：postman
