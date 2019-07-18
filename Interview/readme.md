@@ -584,7 +584,7 @@
       小程序是通过后台获取后台的数据所以不需要解决跨域的问题,直接通过request请求就行，一般跨域问题的话通过在后台设置Access-Contral-Allow-Origin: * 获取某一个域名
       生命周期 onload onshow onready onhide onlaunch onpulldownrefresh stoppulldownfresh
     react项目
-      主要将路由的问
+      主要将路由的问题
     公司的小程序
     公司的项目
     自己做过的项目，必须完全了解各方面
