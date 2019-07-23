@@ -11,7 +11,7 @@
  - 本科/江西财经大学/2020届/软件工程专业
  - Github：https://github.com/chen-kosile
  - 掘金：https://juejin.im/user/5b9c6f3ff265da0ac2565a84
- - Segmentfault：https://segmentfault.com/u/xiaoyu_5aed6d3891e86
+ <!-- - Segmentfault：https://segmentfault.com/u/xiaoyu_5aed6d3891e86 -->
  <!-- - 个人网站（搭建中）：https://www.azuremicrocode.com -->
  - 期望职位：Web前端开发
 
@@ -23,7 +23,7 @@
 - 用户问卷小程序，对微信小程序的迭代
 - 内部项目系统， 项目部分功能的实现 所用技术 react + umi + dva + antd
   - 项目中使用到前后端分离，从项目开始设计一直到开发都在跟进度。
-    在通过学习，更好的设计好接口。在后面开发模块明显更加快速和完善，模块化更加细化
+    理解业务需求，在通过学习，更好的设计好一些数据。在后面开发模块明显更加快速和完善，模块化更加细化
     锻炼了自己与同事的沟通能力与UI和后端同事交流，协同开发
     <!-- 
         遇到的难点?

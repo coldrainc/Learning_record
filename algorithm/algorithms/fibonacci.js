@@ -12,7 +12,7 @@ console.log("sum = " + sum);
 
 function optFib(a, b, n) {
   sum1++;
-  return n < 2 ? b : optFib(b, a+b, n-1);
+  return n === 0 ? a : optFib(b, a+b, n-1);
 }
 var sum1 = 0;
 console.log(optFib(0, 1, 4));
