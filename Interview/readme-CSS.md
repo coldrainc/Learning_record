@@ -55,6 +55,8 @@
     margin: 0 auto;
     left: 0;
     right: 0;
+  3. absolute transform top 0 left 0
+  4. 父元素 table-cell text-align：center vertical-align middle 子元素 vertical middle
 - dispaly
   inline - 内联
   none - 隐藏

@@ -22,3 +22,7 @@ console.log(0 == null) // 判断false还是ture一共有12步，在前面11步�
 console.log(Object.prototype.toString.call(new Number(3))); // 返回[Number: 3]
 console.log(new String('str')) // 返回 [String: 'str']
 console.log(!![])
+let a = { a: 1};
+let b = { b: 1};
+
+console.log(a == b)
