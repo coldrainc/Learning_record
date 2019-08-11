@@ -52,11 +52,13 @@
     position: absolute;
     width: 200px;
     height: 200px;
-    margin: 0 auto;
+    margin: auto;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
   3. absolute transform top 0 left 0
-  4. 父元素 table-cell text-align：center vertical-align middle 子元素 vertical middle
+  4. 父元素 table-cell text-align：center vertical-align：middle 子元素 vertical middle
 - dispaly
   inline - 内联
   none - 隐藏
