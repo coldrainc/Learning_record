@@ -30,6 +30,9 @@
   应用层 直接为应用程序提供服务 http ftp
 - http
     <https://juejin.im/post/5d032b77e51d45777a126183/>
+    <https://juejin.im/post/5ba68c17f265da0a9e530d70/>
+    那么在HTTP2.0下，我们就不需要做文件合并，不需要CDN放不同域名下
+    头部压缩 通信双方缓存了一份静态header表，避免重复上传，如果静态中存在使用索引
 - 写一个加法函数(sum)，使他可以同时支持sum(x,y)和sum(x)(y)两种调用方式。
 
 ``` js

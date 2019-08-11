@@ -22,7 +22,7 @@
       只是同步状态，可以使用redux-thunk或者saga
     redux将整个应用状态储存到store里面，其实就是一颗状态树
     store中每一个state对应一个View需要修改状态的时候只能通过dispatch派发一个action，然后reducer通过action来修改store里面的数据，并且使用subscribe发布订阅者模式将监听函数放进数组，当通过dispatch派发action获得新的state也就是状态后将监听函数再执行一次，就是重新渲染获取新的状态
-    组件可以dispatch派发action行为给store，当reducer接收到action根据执行响应的操作，修改数据，数据修改后react组件将会重新渲染
+    组件可以dispatch派发action行为给store，当reducer接收到action根据执行响应的操作，修改数据，数据修改后react组件将会重新渲染reducer纯函数
     组件来通过订阅store中的状态state来刷新视图
     redux3三大原则
       唯一数据源
@@ -91,7 +91,6 @@
       react的onClick本身就是事件委托了，和原生JS的onclick不一样，所以你可以直接在li上面绑定，建议不要这样写li。
 
     - 钩子函数 生命周期函数 hooks 本质上就是一类特殊的函数
-
     合成事件和钩子函数的调用顺序在更新之前，导致合成事件和钩子函数没办法拿到更新后的值
     父组件传递给子组件state的时候，props是不能同步刷新的re-render不能同步刷新
     不能保证同步执行 是性能优化
@@ -190,3 +189,33 @@
   
 - create-react-app
   postCss 自动添加前缀
+  
+- redux-thunk 和 redux-saga的区别
+  - 使用redux-thunk不易于维护，每个异步操作都需要定义一个action
+    通过在dispatch 和reducer中间添加一个中间件
+    action形式不统一，就是每个都要写一个
+    异步操作太分散，异步操作在各个actio里面
+  - 使用redux-saga
+    通过generator实现的
+    effect 本质是一个特定的函数，返回的就是给特定的函数，返回的纯文本
+    异步操作——>Effect函数——>纯文本对象——>saga-middleware——>执行异步操作
+    集中处理了所有的异步操作，异步接口部分一目了然
+    action是普通对象，这跟redux同步的action一模一样
+    通过Effect，方便异步接口的测试
+    通过worker 和watcher可以实现非阻塞异步调用，并且同时可以实现非阻塞调用下的事件监听
+    异步操作的流程是可以控制的，可以随时取消相应的异步操作。
+- umi 约定式的
+  是一个可插拔的企业级 react 应用框架。umi 以路由为基础的
+  约定式路由以及各种进阶的路由功能，并以此进行功能扩展，比如支持路由级的按需加载。
+  然后配以完善的插件体系，覆盖从源码到构建产物的每个生命周期，
+  支持各种功能扩展和业务需求，
+- dva有什么作用
+   其实就是集成了redux redux-saga 还内置了react-router
+- react.lazy react suspense
+  lazy 动态引入
+  Suspense组件用于包装lazy组件，在lazy组件还没有完全加载时，将fallback内容呈现给用户。
+  用动态加载，编译时会将文件分割，从加载文件到呈现会有时间延迟，此时可以使用Suspense展示一个loading。
+  使用lazy动态加载，配合suspense使用，当lazy非常耗时处于加载的时候，使用suspense包裹，先展示fallback里面的组件
+- ErrorBoundary 组件， 处理错误
+  作为外层的组件，可以将出错的组件统一处理错误
+  
