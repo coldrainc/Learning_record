@@ -295,7 +295,7 @@
   - 实现对象的遍历 使用obj.hasOwnProperty(key) 来判断是否是对象的属性
     Object.keys() 获取对象所有属性的key 是一个数组
     使用for in 遍历key for of 遍历每一项
-    Object.getOwnPropertyNames(obj) 对象的方法获取对象所有的属性，不包括prototype的属性
+    Object.getOwnPropertyNames(obj) 对象的方法获取对象所有的属性包括不可枚举的，不包括prototype的属性
   - js查找元素
     出了getElementById要加 s
     document.getElementById()
@@ -465,7 +465,7 @@
   - 深度优先
     <https://www.cnblogs.com/wuguanglin/p/DPSandBPS.html/>
   - 服务器响应请求返回的数据
-  - 缓存 服务器端头信息中 cache-contro
+  - 缓存 服务器端头信息中 cache-contral
     强缓存，200 当在检查浏览器中有缓存数据，直接使用缓存数据。
     协商缓存 304 先向服务器发送请求校验是否要请求新的数据，然后根据浏览器返回的头信息来决定是否需要获取数据
   - DNS

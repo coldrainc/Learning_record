@@ -135,7 +135,6 @@
     Diff 算法中 React 会借助元素的 Key 值来判断该元素是新近创建的还是被移动而来的元素，从而减少不必要的元素重渲染，有助于提高性能，
     每个key在兄弟元素间是独一无二的，并且在map的过程中最好不要使用index作为key，因为当顺序改变时key发生了改变，React会认为数据发生了改变，就会重新渲染，造成性能浪费。
 
-  
   - 虚拟dom
     使用js对象来模拟真实的DOM树，数据更新的时候创建新的虚拟DOM通过新旧对比来获取差异，然后通过特定的render将差异的虚拟DOM渲染成真实的DOM
     虚拟DOM进行频繁修改，然后一次性比较并修改真实DOM中需要改的部分（注意！），最后并在真实DOM中进行排版与重绘，减少过多DOM节点排版与重绘损耗
@@ -153,9 +152,7 @@
     同一层级的节点通过key来区分
     合并操作，调用component的setState的时候，将其标记为dirty，到每一个事件循环结束，react检查所有的dirty的component重新绘制
     选择性渲染子树，可以通过重写shouldComponentUpdate来提高性能
-    
     每当您在组件上调用setState时，React会将其标记为脏。 在事件循环结束时，React会查看所有脏组件并重新渲染它们
-    
 
   - 类组件和函数组件
     类组件有更多额外的功能，如组件自身状态和生命周期函数等，也能使组件访问store并维持状态
@@ -216,6 +213,6 @@
   Suspense组件用于包装lazy组件，在lazy组件还没有完全加载时，将fallback内容呈现给用户。
   用动态加载，编译时会将文件分割，从加载文件到呈现会有时间延迟，此时可以使用Suspense展示一个loading。
   使用lazy动态加载，配合suspense使用，当lazy非常耗时处于加载的时候，使用suspense包裹，先展示fallback里面的组件
-- ErrorBoundary 组件， 处理错误
+- ErrorBoundary 组件， 处理错误 componenDidCatch
   作为外层的组件，可以将出错的组件统一处理错误
   
