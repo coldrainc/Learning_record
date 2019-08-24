@@ -174,7 +174,7 @@
     setState return null
     shouldComponentUpdate 返回false
     render return null
-  
+
   - 如何告诉React应该编译生成版本
     通常使用Webpack中的DefinPlugin方法将NODE_EVN设置为production
   - 性特性

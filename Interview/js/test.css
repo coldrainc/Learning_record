@@ -1,0 +1,12 @@
+.test:hover + 1*tr td .addSchedule i {
+  display: block;
+}
+.test:hover + 2*tr td .addSchedule i {
+  display: block;
+}
+.test:hover + 3*tr td .addSchedule i {
+  display: block;
+}
+.test:hover + 4*tr td .addSchedule i {
+  display: block;
+}

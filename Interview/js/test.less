@@ -1,0 +1,17 @@
+.loop(@n, @i: 1) when (@i =< @n) {
+  &+@{i}*tr {
+    td{
+      .addSchedule{
+          i{
+              display: block;
+          }
+      }
+    }
+  }
+  .loop(@n, (@i+1))
+}
+.test {
+  &:hover {
+    .loop(4)
+  }
+}
