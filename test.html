@@ -17,6 +17,12 @@
       width: 30px;
       height: 30px;
       background: darkcyan;
+      right: 0;
+    }
+    .test3 {
+      width: 30px;
+      height: 30px;
+      background: red;
       left: 20px;
     }
   </style>
@@ -24,6 +30,23 @@
 <body>
   <div class="test">
     <div class="test2"></div>
+    <div class="test3"></div>
   </div>
+  <script>
+    let test = document.getElementsByClassName('test2')[0];
+    let test3 = document.getElementsByClassName('test3')[0];
+    // test.addEventListener('click',function(e) {
+    //   console.log(this)
+    // })
+    // test3.addEventListener('click', (e) => {
+    //   console.log(this)
+    // })
+    new Promise((resolve, reject) => {
+      console.log(this)
+    })
+    new Promise(function(resolve, reject) {
+      console.log(this)
+    })
+  </script>
 </body>
 </html>

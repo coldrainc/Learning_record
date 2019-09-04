@@ -215,4 +215,5 @@
   使用lazy动态加载，配合suspense使用，当lazy非常耗时处于加载的时候，使用suspense包裹，先展示fallback里面的组件
 - ErrorBoundary 组件， 处理错误 componenDidCatch
   作为外层的组件，可以将出错的组件统一处理错误
-  
+- redux 更新原理
+  <https://imweb.io/topic/5a1969b2a192c3b460fce226/>

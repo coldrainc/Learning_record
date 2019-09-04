@@ -265,3 +265,35 @@ new Test().test(); // 输出 5
 Test();
 console.log(one)
 ```
+
+// js继承
+// 字符串子回文
+// 链表翻转
+// cors head有什么区别
+// 时间循环会等到微任务执行完才去执行宏任务
+// redux connect
+// 数组去重含有字符数字怎么处理
+// react vue 小程序 区别
+http连接具体过程
+function all(arrs) {
+    return new Promise((resolve, reject) => {
+        let result = [];
+        i = 0;
+        arrs[i].then(res => {
+            result.push(res);
+            i++;
+            if (i === arrs.lenght) {
+                resolve(result);
+            } else {
+                all()
+            }
+        })
+    })
+}
+promise 串行 reducer实现
+    function runPromiseByQueue(myPromises) {
+        myPromises.reduce((pre, next) => pre.then(() => next), Promise.resolve());
+    }
+怎么判断某一个文件是否传输完成
+服务端推送 websocket ajax 轮询 具体就是使用setTimeout实现
+    SSE(Server-Sent-Events,服务器发送事件) API 用于创建到服务器的单向连接

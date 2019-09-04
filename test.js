@@ -60,16 +60,37 @@
   
 // }
 
-function test(arr) {
-  let result = 0;
-  for(let i = 0 ;i < arr.length; i++) {
-    let sum = 0;
-    for(let j = i; j < arr.length; j++) {
-      sum += arr[j];
-      if (sum > result) {
-        result = sum;
-      }
-    }
+// function test(arr) {
+//   let result = 0;
+//   for(let i = 0 ;i < arr.length; i++) {
+//     let sum = 0;
+//     for(let j = i; j < arr.length; j++) {
+//       sum += arr[j];
+//       if (sum > result) {
+//         result = sum;
+//       }
+//     }
+//   }
+//   return result;
+// }
+// const dupArr =[3,1,2, '1',1,4,3,'1']
+// => [3,1,2, '1' ,4]
+
+let obj = {
+  a: {
+      b: [1,2,3],
+      c: "i am foobar"
   }
-  return result;
 }
+
+function deepCopy(obj) {
+  let tmp = Array.isArray(obj) ? [] : {};
+  for (let i in obj) {
+      if (obj.hasOwnProperty(i)) { // 这里 i就是key就是属性
+          tmp[i] = typeof obj[i]  === 'object' ? deepCopy(obj[i]) : obj[i];
+      }
+  }
+  return tmp;
+}
+console.log(JSON.stringify(deepCopy(obj)));
+
