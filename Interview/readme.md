@@ -621,3 +621,4 @@
       }
     }
   })
+  git checkout .
