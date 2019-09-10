@@ -292,7 +292,10 @@ function all(arrs) {
 }
 promise 串行 reducer实现
     function runPromiseByQueue(myPromises) {
-        myPromises.reduce((pre, next) => pre.then(() => next), Promise.resolve());
+        myPromises.reduce((pre, next) => pre.then((res) => {
+          res
+          return next;
+        }));
     }
 怎么判断某一个文件是否传输完成
 服务端推送 websocket ajax 轮询 具体就是使用setTimeout实现
