@@ -300,3 +300,43 @@ promise 串行 reducer实现
 怎么判断某一个文件是否传输完成
 服务端推送 websocket ajax 轮询 具体就是使用setTimeout实现
     SSE(Server-Sent-Events,服务器发送事件) API 用于创建到服务器的单向连接
+
+function func(arr) {
+    if (arr.length === 0) return;
+    arr[arr.length-1]++;
+    for (let i = arr.length-1; i >= 0; i--) {
+        if (arr[i] === 10) {
+            arr[i] = 0;
+            if (i === 0) {
+                arr.unshift(1);
+            } else {
+                arr[i-1] = arr[i-1] + 1;
+            }
+        } 
+    }
+    return arr;
+}
+
+console.log("1");
+
+setTimeout(function() {
+  console.log("2");
+  process.nextTick(function() {
+    console.log("3");
+  });
+  new Promise(function(resolve) {
+    console.log("4");
+    resolve();
+  }).then(function() {
+    console.log("5");
+  });
+});
+process.nextTick(function() {
+  console.log("6");
+});
+new Promise(function(resolve) {
+  console.log("7");
+  resolve();
+}).then(function() {
+  console.log("8");
+});

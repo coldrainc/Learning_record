@@ -76,21 +76,26 @@
 // const dupArr =[3,1,2, '1',1,4,3,'1']
 // => [3,1,2, '1' ,4]
 
-let obj = {
-  a: {
-      b: [1,2,3],
-      c: "i am foobar"
-  }
-}
+// let obj = {
+//   a: {
+//       b: [1,2,3],
+//       c: "i am foobar"
+//   }
+// }
 
-function deepCopy(obj) {
-  let tmp = Array.isArray(obj) ? [] : {};
-  for (let i in obj) {
-      if (obj.hasOwnProperty(i)) { // 这里 i就是key就是属性
-          tmp[i] = typeof obj[i]  === 'object' ? deepCopy(obj[i]) : obj[i];
-      }
-  }
-  return tmp;
-}
-console.log(JSON.stringify(deepCopy(obj)));
+// function deepCopy(obj) {
+//   let tmp = Array.isArray(obj) ? [] : {};
+//   for (let i in obj) {
+//       if (obj.hasOwnProperty(i)) { // 这里 i就是key就是属性
+//           tmp[i] = typeof obj[i]  === 'object' ? deepCopy(obj[i]) : obj[i];
+//       }
+//   }
+//   return tmp;
+// }
+// console.log(JSON.stringify(deepCopy(obj)));
+let lines = '013254 04354325'.split(' ');
+let num1 = parseInt(lines[0]), num2 = parseInt(lines[1]);
+if (!num1 || !num2) console.log(false);
+let result = num1+num2;
+console.log('' + result);
 

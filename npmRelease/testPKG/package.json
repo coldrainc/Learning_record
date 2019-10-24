@@ -1,0 +1,15 @@
+{
+  "name": "testpkg",
+  "version": "0.2.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chenyh-test-pkg": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chen-kosile <1944614333@qq.com> (https://github.com/chen-kosile)",
+  "license": "MIT"
+}
