@@ -193,7 +193,7 @@
     action形式不统一，就是每个都要写一个
     异步操作太分散，异步操作在各个actio里面
   - 使用redux-saga
-    通过generator实现的
+    通过generator实现的``
     effect 本质是一个特定的函数，返回的就是给特定的函数，返回的纯文本
     异步操作——>Effect函数——>纯文本对象——>saga-middleware——>执行异步操作
     集中处理了所有的异步操作，异步接口部分一目了然

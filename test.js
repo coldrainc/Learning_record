@@ -93,9 +93,10 @@
 //   return tmp;
 // }
 // console.log(JSON.stringify(deepCopy(obj)));
-let lines = '013254 04354325'.split(' ');
-let num1 = parseInt(lines[0]), num2 = parseInt(lines[1]);
-if (!num1 || !num2) console.log(false);
-let result = num1+num2;
-console.log('' + result);
 
+console.log(a);
+var a = 1;
+
+function test() {
+  console.log()
+}

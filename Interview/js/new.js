@@ -4,3 +4,4 @@ function news (Base) {
   Base.call(obj);
   return obj;
 }
+Object.setPrototypeOf(obj, Base.prototype)
