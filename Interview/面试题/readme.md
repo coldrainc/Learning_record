@@ -278,16 +278,18 @@ http连接具体过程
 function all(arrs) {
     return new Promise((resolve, reject) => {
         let result = [];
-        i = 0;
-        arrs[i].then(res => {
-            result.push(res);
-            i++;
-            if (i === arrs.lenght) {
-                resolve(result);
-            } else {
-                all()
-            }
-        })
+        let i = 0;
+        fot(let i = 0; i < arrs.length; i++) {
+          arrs[i].then(res => {
+              result.push(res);
+              i++;
+              if (i === arrs.length) {
+                  resolve(result);
+              }
+          }, (err) => {
+            reject(err);
+          })
+        }
     })
 }
 promise 串行 reducer实现

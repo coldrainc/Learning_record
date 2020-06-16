@@ -14,6 +14,7 @@ Array.prototype.reduceImpMap = function (fn, thisArg) {
     },[])
   }
 }
+
 Array.prototype.reduceToMap = function (fn) {
   return this.reduce((pre, cur) => {
     return pre.push(fn(cur))

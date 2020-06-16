@@ -20,9 +20,9 @@ function maxSequence2(arr, len) {
   let maxSum = 0, maxHere = 0;
   for (let i = 0; i < len; i++) {
     if (maxHere <= 0) {
-      maxHere = a[i];
+      maxHere = arr[i];
     } else {
-      maxHere += a[i];
+      maxHere += arr[i];
     }
     if (maxHere > maxSum) {
       maxSum = maxHere;
