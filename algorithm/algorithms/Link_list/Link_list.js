@@ -1,3 +1,8 @@
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+
 function Link_list() {
   function Node(value) {
     this.value = value;
@@ -55,6 +60,25 @@ function Link_list() {
   this.getHead = function() {
     return head;
   }
+}
+
+function sumNum(l1, l2) { // 两数之和
+  let carry = 0;
+  let dummy = new Node();
+  let cur = dummy;
+
+  while (l1 || l2 || carry) {
+    const s = (l1.value || 0) + (l2.value || 0) + carry;
+    carry = parseInt(s / 10, 10);
+    cur.value = s % 10;
+    cur.next = new Node();
+    cur = cur.next;
+
+    l1 = l1?.next;
+    l2 = l2?.next;
+  }
+
+  return dummy;
 }
 
 function reverse(head) { // 翻转链表

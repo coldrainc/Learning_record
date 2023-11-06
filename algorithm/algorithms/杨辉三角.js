@@ -16,3 +16,25 @@ function triangle (num) {
 }
 
 console.log(triangle(10));
+
+// 两数之和
+function sumNum(nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    if (map.has(target - nums[i])) {
+      return [map.get(target - nums[i], i)];
+    }
+
+    map.set(nums[i], i);
+  }
+}
+
+function sumNum(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+}

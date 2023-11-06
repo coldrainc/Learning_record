@@ -75,6 +75,17 @@ function CirLinkList() {
   this.size = function() {
     return length;
   }
+  this.indexOf = function(element) {
+    var index = 0, current = head;
+    while (current) {
+      if (current.element === element) {
+        return index;
+      }     
+      index++;
+      current = current.next;
+    }
+    return -1;
+  }
   this.isEmpty = function() {
     return head ? false : true;
   }
