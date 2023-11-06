@@ -368,7 +368,7 @@
     对象和原型都有原型，对象的原型就是原型对象，
     原型链对象的原型也是一个对象，原型也有原型
     prototype(原型对象)函数才有的属性, 函数也有__proto__属性
-    对象的__proto__属性指向该对象构造函数的原型对象 也就是 obj.__protype = Obj.prototype
+    对象的__proto__属性指向该对象构造函数的原型对象 也就是 obj.__proto__ = Obj.prototype
     __proto__对象具有的属性，js万物皆对象，所以会形成一条原型链到Object而Object.prototype.__proto__=null
     __proto__可以理解为构造器的原型
     __proto__指向prototype
