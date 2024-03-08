@@ -1,21 +1,34 @@
-function maxStr(str) {
-    if (str.length <= 1) return str.length; 
-    let left = 0;
-    let right = 1;
-    let temp;
-    let max = 0;
-    while (right < str.length) {
-        temp = str.slice(left, right);
-        if (temp.indexOf(str.charAt(right)) > -1) {
-            left = left + temp.indexOf(str.charAt(right)) + 1;
-            continue;
-        } else {
-            right++;
-        }
+// function calcArr(arr, target) {
+//     const newArr = arr.sort((a, b) => a - b);
+//     let result = [];
+//     function track(tmpArr, total) {
+//         if (total === target) {
+//             result.push(tmpArr);
+//         } else if (total > target) {
+//             return;
+//         } else {
+//             for (let i = 0; i < newArr.length; i++) {
+//                 track([...tmpArr, newArr[i]], total + newArr[i]);
+//             }
+//         }
+//     }
 
-        if (right - left > max) max = right - left;
+//     track([], 0);
+
+//     return result;
+// }
+
+// console.log(calcArr([2,3,6,7], 7));
+
+function calc() {
+    for (let i = 0; i < 10; i++) {
+        console.log(i);
+        if (i === 9) {
+            return i;
+        }
     }
-    return max;
+
+    console.log('tests');
 }
 
-console.log(maxStr('dfsxlkasd'));
+calc();

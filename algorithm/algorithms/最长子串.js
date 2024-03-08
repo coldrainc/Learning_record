@@ -1,16 +1,24 @@
-function maxStr(arr) {
-    const dp = new Array(str.length).fill(1);
-    for (let i = 1; i < str.length; i++) {
-        for (let j = 0; j < i; j++) {
-            if (arr[j] < arr[i]) {
-                dp[i] = Math.max(dp[i], dp[j] + 1);
-            }
+function maxStr(str) {
+    if (str.length <= 1) return str.length; 
+    let left = 0;
+    let right = 1;
+    let temp;
+    let max = 0;
+    while (right < str.length) {
+        temp = str.slice(left, right);
+        if (temp.indexOf(str.charAt(right)) > -1) {
+            left = left + temp.indexOf(str.charAt(right)) + 1;
+            continue;
+        } else {
+            right++;
         }
-    }
 
-    return Math.max(...dp);
+        if (right - left > max) max = right - left;
+    }
+    return max;
 }
 
+console.log(maxStr('dfsxlkasd'));
 function fib1(n) {
     if (n <= 1) return n;
 
